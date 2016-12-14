@@ -18,7 +18,7 @@ ReactDOM.render(
 
 
 
-  <Route path="*" component={NotFoundView} />
+  {/*<Route path="*" component={NotFoundView} />*/}
   </Router>,
   document.getElementById('root')
 
