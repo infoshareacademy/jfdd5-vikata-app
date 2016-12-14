@@ -5,17 +5,51 @@
 export default [
   {
     id: 1,
-    name: 'Opel',
-    modelsIds: [1, 2, 3]
+    name: 'Astra',
+    partsIds: [1, 2, 3]
   },
   {
     id: 2,
-    name: 'Ford',
-    modelsIds: [4, 5, 6]
+    name: 'Corsa',
+    partsIds: [4, 5, 6]
   },
   {
     id: 3,
-    name: 'Fiat',
-    modelsIds: [7, 8, 9]
+    name: 'Vectra',
+    partsIds: [7, 8, 9]
+  },
+
+  {
+    id: 4,
+    name: 'Mondeo',
+    partsIds: [10, 1, 2]
+  },
+  {
+    id: 5,
+    name: 'Galaxy',
+    partsIds: [3, 4, 5]
+  },
+  {
+    id: 6,
+    name: 'Mustang',
+    partsIds: [7, 8, 9]
+  },
+
+  {
+    id: 7,
+    name: 'Punto',
+    partsIds: [1, 2, 3]
+  },
+  {
+    id: 8,
+    name: 'Panda',
+    partsIds: [4, 5, 6]
+  },
+  {
+    id: 9,
+    name: '500',
+    partsIds: [7, 8, 9]
   }
+
+
 ]
