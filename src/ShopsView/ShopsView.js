@@ -10,9 +10,19 @@ export default (props) =>(
         <h1>Hurtownie dla produktu o id:{props.params.shopId}</h1>
         <ul>
             {
-                shops.filter
+              shops.map(
+                shop =>
+                  <li key={shop.id}>
+                    {
+                      parts.filter(
+                        part => part.id.indexOf(part.id) !== -1
+                      )
+                    }
+                  </li>
+              )
             }
         </ul>
     </div>
 
 )
+
