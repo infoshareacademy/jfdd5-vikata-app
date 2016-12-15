@@ -9,23 +9,20 @@ export default (props) =>(
     <div>
         <h1>Hurtownie dla produktu o id:{props.params.shopId}</h1>
         <ul>
-            {
-              parts.map(
-                part =>
-                  <li key={part.id}>
+
                     {
                       shops.filter(
-                        shop => shop.partsIds.indexOf(part.id) !== -1
+                        shop => shop.parts.find(
+                          part => part.partId === parseInt(props.params.shopId)
+                        ) !== undefined
                       ).map(
                         shop =>
                           <li key={shop.id}>
                             {shop.name}
-                          </li>
-                      )
+                          </li>)
                     }
-                  </li>
-              )
-            }
+
+
         </ul>
     </div>
 
