@@ -14,8 +14,12 @@ export default (props) => {
           types.map(
             typ =>
               <li key={typ.id}>{typ.type}</li>
+            {/*here filter parts matchind typeId*/}
           )
         }
+      </ul>
+      <ul>
+
       </ul>
     </div>
   )
