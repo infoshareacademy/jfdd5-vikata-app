@@ -2,32 +2,41 @@
  * Created by alanw on 14.12.2016.
  */
 import React from 'react'
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 import {shops, parts} from '../data'
 
 export default (props) =>(
     <div>
-        <h1>Hurtownie dla produktu o id:{props.params.shopId}</h1>
+      <h2>
+        {
+          parts.filter(
+            part => part.id===parseInt(props.params.partId)
+          ).map(
+            part => part.name
+          )
+        } jest dostępny/a w sklepach:
+      </h2>
         <ul>
 
                     {
                       shops.filter(
                         shop => shop.parts.find(
-                          part => part.partId === parseInt(props.params.shopId)
+                          part => part.partId === parseInt(props.params.partId)
                         ) !== undefined
                       ).map(
                         shop =>
-                          <li key={shop.id}>
-                            {shop.name}
+                          <ListGroup>
+                            <ListGroupItem key={shop.id}>
+                              {shop.name} cena:
                             {shop.parts.filter(
-                              part => part.partId === parseInt(props.params.shopId)
+                              part => part.partId === parseInt(props.params.partId)
                             ).map(
-                              part =>
-                                <li key={part.id}>
-                                  {part.price}
-                                </li>
+                              part => part.price
                             )}
-                          </li>)
+                            </ListGroupItem>
+                          </ListGroup>
+                      )
                     }
 
 
