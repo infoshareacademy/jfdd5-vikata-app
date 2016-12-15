@@ -1,21 +1,21 @@
-import {CarSelectionForm} from 'CarSelectionForm'
+import React from 'react'
+import {CarSelectionForm} from '../CarSelectionForm'
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <img src="" className="App-logo" alt="logo" />
+          <h2>Welcome to AUTONAPRAWIACZ</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+      <CarSelectionForm/>
+
       </div>
-
-
     );
   }
 }
+
 
 export default App;
