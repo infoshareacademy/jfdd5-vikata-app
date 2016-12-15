@@ -2,7 +2,7 @@
  * Created by rafalmiler on 15.12.16.
  */
 import React from 'react'
-import { parts, types } from '../data'
+import {parts, types} from '../data'
 
 export default (props) => {
   console.log(types)
@@ -16,25 +16,22 @@ export default (props) => {
               <li key={typ.id}>{typ.type}
                 <ul>
                   {parts.filter(
-                    part => part.id < 10
+                    part => part.id < 5
                   ).map(
                     part =>
                       <li key={part.id}>
                         {part.name}
                       </li>
-                  )}
                   )
                   }
+                </ul>
+
+              </li>
+          )
+
+        }
+
       </ul>
-
-
-    </li>
-
+    </div>
   )
-
-}
-
-</ul>
-</div>
-)
 }
