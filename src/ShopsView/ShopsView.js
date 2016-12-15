@@ -19,6 +19,14 @@ export default (props) =>(
                         shop =>
                           <li key={shop.id}>
                             {shop.name}
+                            {shop.parts.filter(
+                              part => part.partId === parseInt(props.params.shopId)
+                            ).map(
+                              part =>
+                                <li key={part.id}>
+                                  {part.price}
+                                </li>
+                            )}
                           </li>)
                     }
 
