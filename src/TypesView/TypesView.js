@@ -2,7 +2,7 @@
  * Created by rafalmiler on 15.12.16.
  */
 import React from 'react'
-import { parts, types } from '../data'
+import {parts, types} from '../data'
 
 export default (props) => {
   console.log(types)
@@ -13,12 +13,23 @@ export default (props) => {
         {
           types.map(
             typ =>
-              <li key={typ.id}>{typ.type}</li>
-            {/*here filter parts matchind typeId*/}
+              <li key={typ.id}>{typ.type}
+                <ul>
+                  {parts.filter(
+                    part => part.typeId == typ.id
+                  ).map(
+                    part =>
+                      <li key={part.id}>
+                        {part.name}
+                      </li>
+                  )
+                  }
+                </ul>
+
+              </li>
           )
+
         }
-      </ul>
-      <ul>
 
       </ul>
     </div>
