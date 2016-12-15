@@ -4,7 +4,8 @@
 import React from 'react'
 import { parts, types } from '../data'
 
-export default () => {
+export default (props) => {
+  console.log(types)
   return (
     <div>
       <h2>Typy części</h2>
@@ -12,9 +13,7 @@ export default () => {
         {
           types.map(
             typ =>
-              <li key="typ.id">{typ.type}
-              </li>
-
+              <li key={typ.id}>{typ.type}</li>
           )
         }
       </ul>

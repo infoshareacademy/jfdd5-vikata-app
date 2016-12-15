@@ -4,18 +4,18 @@
 export default [
   {
     id: 1,
-    type: 'tyre'
+    type: 'Opony'
   },
   {
     id: 2,
-    type: 'bulb'
+    type: 'Żarówki'
   },
   {
     id: 3,
-    type: 'audio'
+    type: 'Audio'
   },
   {
     id: 4,
-    type: 'engine'
+    type: 'Silnik'
   }
 ]
