@@ -13,10 +13,28 @@ export default (props) => {
         {
           types.map(
             typ =>
-              <li key={typ.id}>{typ.type}</li>
-          )
-        }
+              <li key={typ.id}>{typ.type}
+                <ul>
+                  {parts.filter(
+                    part => part.id < 10
+                  ).map(
+                    part =>
+                      <li key={part.id}>
+                        {part.name}
+                      </li>
+                  )}
+                  )
+                  }
       </ul>
-    </div>
+
+
+    </li>
+
   )
+
+}
+
+</ul>
+</div>
+)
 }
