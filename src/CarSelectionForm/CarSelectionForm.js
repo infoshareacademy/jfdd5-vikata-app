@@ -17,8 +17,19 @@ export default class CarSelectionForm extends React.Component {
     super ()
 
 
-  }
+    this.handleBrandClick = eventKey => {
+      console.log(eventKey)
+      this.setState({
+        brand: brands.find( brand => brand.id === eventKey ).name
+      })
+    }
 
+    this.state = {
+      brand: 'MARKA',
+      model: 'MODEL'
+    }
+
+  }
 
   render ()
   {
@@ -43,11 +54,11 @@ export default class CarSelectionForm extends React.Component {
     <div>
       <h1> SEARCH BY MODEL </h1>
 
-      <SplitButton bsStyle="1" title="MARKA" key={1} id={`split-button-basic-1`} onSelect={(eventKey) => fun1(eventKey)}>
+      <SplitButton bsStyle="1" title={this.state.brand} key={1} id={`split-button-basic-1`} onSelect={this.handleBrandClick}>
         {brandsListItems}
       </SplitButton>
 
-      <SplitButton bsStyle="1" title="MODEL" key={2} id={`split-button-basic-1`}>
+      <SplitButton bsStyle="1" title={this.state.model} key={2} id={`split-button-basic-1`}>
         {/*{modelsListItems}*/}
       </SplitButton>
 
