@@ -16,7 +16,7 @@ export default (props) => {
               <li key={typ.id}>{typ.type}
                 <ul>
                   {parts.filter(
-                    part => part.id < 5
+                    part => part.typeId == typ.id
                   ).map(
                     part =>
                       <li key={part.id}>
