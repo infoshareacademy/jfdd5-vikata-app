@@ -4,18 +4,18 @@
 export default [
   {
     id: 1,
-    type: tyre
+    type: 'tyre'
   },
   {
     id: 2,
-    type: bulb
+    type: 'bulb'
   },
   {
     id: 3,
-    type: audio
+    type: 'audio'
   },
   {
     id: 4,
-    type: engine
+    type: 'engine'
   }
 ]
