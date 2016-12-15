@@ -6,25 +6,14 @@ import React from 'react'
 
 import { Link } from 'react-router'
 
-import { }
-export default
 
-const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger'];
+import {brands} from '../data'
+import {models} from '../data'
 
-function renderDropdownButton(title, i) {
-    return (
-        <SplitButton bsStyle={title.toLowerCase()} title={title} key={i} id={`split-button-basic-${i}`}>
-            <MenuItem eventKey="1">Action</MenuItem>
-            <MenuItem eventKey="2">Another action</MenuItem>
-            <MenuItem eventKey="3">Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey="4">Separated link</MenuItem>
-        </SplitButton>
-    );
-}
+export default () => (
+  <div>
+    <h1> SEARCH BY MODEL </h1>
 
-const buttonsInstance = (
-    <ButtonToolbar>{BUTTONS.map(renderDropdownButton)}</ButtonToolbar>
-);
+  </div>
+)
 
-ReactDOM.render(buttonsInstance, mountNode);
