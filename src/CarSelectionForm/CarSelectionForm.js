@@ -8,7 +8,7 @@ import React from 'react'
 
 //
 import {brands} from '../data'
-// import {models} from '../data'
+import {models} from '../data'
 const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger'];
 
 export default class CarSelectionForm extends React.Component {
@@ -24,21 +24,31 @@ export default class CarSelectionForm extends React.Component {
   {
 
     const brandsListItems = brands.map(
-      brand =>
-        <li key={brand.id}>{brand.name}</li>
-
-
+      brand  =>
+       <MenuItem eventKey={brand.id}>{brand.name} </MenuItem>
     )
+
+    {/*const modelsListItems =*/}
+
+      {/*models.filter(*/}
+    //     model => model.modelsIds.indexOf(model.id) !== -1
+    //   ).map(
+    //   model =>
+    //     <MenuItem key={model.id}> {model.name} </MenuItem>
+    //
+    // )
+
     return (
 
     <div>
       <h1> SEARCH BY MODEL </h1>
-      {brandsListItems}
-      <SplitButton bsStyle="1" title="MARKA" key={1} id={`split-button-basic-1`}>
-        <MenuItem eventKey="1">Action</MenuItem>
+
+      <SplitButton bsStyle="1" title="MARKA" key={1} id={`split-button-basic-1`} onSelect={(eventKey) => fun1(eventKey)}>
+        {brandsListItems}
       </SplitButton>
+
       <SplitButton bsStyle="1" title="MODEL" key={2} id={`split-button-basic-1`}>
-        <MenuItem eventKey="1">Action</MenuItem>
+        {/*{modelsListItems}*/}
       </SplitButton>
 
 
