@@ -25,7 +25,7 @@ export default class CarSelectionForm extends React.Component {
     }
 
     this.state = {
-      brand: 'MARKA',
+      brand: {name:'MARKA'},
       model: 'MODEL'
     }
 
@@ -38,16 +38,15 @@ export default class CarSelectionForm extends React.Component {
       brand  =>
        <MenuItem eventKey={brand.id}>{brand.name} </MenuItem>
     )
+    const modelsListItems = this.state.brand.modelIds ? this.state.brand.modelIds : [];
+   /* const modelsListItems = models.map(
+      model => {
 
-    {/*const modelsListItems =*/}
+        //Key = {eventKey}
+        return true;
+      }
 
-      {/*models.filter(*/}
-    //     model => model.modelsIds.indexOf(model.id) !== -1
-    //   ).map(
-    //   model =>
-    //     <MenuItem key={model.id}> {model.name} </MenuItem>
-    //
-    // )
+    )*/
 
     return (
 
@@ -59,7 +58,7 @@ export default class CarSelectionForm extends React.Component {
       </SplitButton>
 
       <SplitButton bsStyle="1" title={this.state.model} key={2} id={`split-button-basic-1`}>
-        {/*{modelsListItems}*/}
+        {modelsListItems}
       </SplitButton>
 
 
