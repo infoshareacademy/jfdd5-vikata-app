@@ -27,13 +27,15 @@ export default (props) => (
           ).map(
             part => (
               <ListGroupItem key={part.id}>
-                {part.name}
+                <h2>
+                  {part.name}
+                </h2>
                 <Button bsStyle="info">Opis produktu</Button>
                 <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
-                {props.children}
+                {part.id == props.params.partId ? props.children : null}
               </ListGroupItem>
             )
           )

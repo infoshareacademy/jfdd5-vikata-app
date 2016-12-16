@@ -8,7 +8,7 @@ import {shops, parts} from '../data'
 
 export default (props) =>(
     <div>
-      <h2>
+      <h3>
         {
           parts.filter(
             part => part.id===parseInt(props.params.partId)
@@ -16,7 +16,7 @@ export default (props) =>(
             part => part.name
           )
         } jest dostępny/a w sklepach:
-      </h2>
+      </h3>
         <ul>
           <ListGroup>
 
