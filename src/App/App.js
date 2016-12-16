@@ -1,5 +1,10 @@
 import React from 'react'
 import {CarSelectionForm} from '../CarSelectionForm'
+import { connect} from 'react-redux'
+
+const mapStateToProps = (state) => ({
+
+})
 
 class App extends React.Component {
   render() {
@@ -18,4 +23,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default connect(mapStateToProps)(App);
