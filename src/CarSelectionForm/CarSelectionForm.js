@@ -29,31 +29,45 @@ export default class CarSelectionForm extends React.Component {
       model: 'MODEL'
     }
 
+    this.modelBrandClick = eventKey => {
+      console.log(eventKey)
+      this.setState({
+        model: models.find( model => model.id === eventKey).name
+
+      })
+    }
+
   }
 
-  render ()
-  {
+  render () {
 
     const brandsListItems = brands.map(
       brand  =>
        <MenuItem eventKey={brand.id}>{brand.name} </MenuItem>
     )
-    const modelsListItems = this.state.brand.modelIds ? this.state.brand.modelIds : [];
-   /* const modelsListItems = models.map(
-      model => {
 
-        //Key = {eventKey}
-        return true;
-      }
 
-    )*/
+      const modelsListItems = models.filter(
+        model => this.state.brand.modelsIds ? this.state.brand.modelsIds.indexOf(model.id) !== -1 : false
+      )
+
+    // )
+    //   modelId => models.find(
+    //     model => model.id === modelId)
+    //   ).map(models =>
+    //     <MenuItem key={models.id}> {models.name} </MenuItem>
+    //
+    //   )
+
+
+
 
     return (
 
     <div>
       <h1> SEARCH BY MODEL </h1>
 
-      <SplitButton bsStyle="1" title={this.state.brand} key={1} id={`split-button-basic-1`} onSelect={this.handleBrandClick}>
+      <SplitButton bsStyle="1" title={this.state.brand.name} key={1} id={`split-button-basic-1`} onSelect={this.handleBrandClick}>
         {brandsListItems}
       </SplitButton>
 
