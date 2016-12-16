@@ -17,8 +17,8 @@ export default (props) => {
             typ =>
             <Col md={4} >
               <li key={typ.id}>
-                <h3>
-                {typ.type}</h3>
+                <h3><a href="#">
+                  {typ.type}</a></h3>
                 <ul>
                   {parts.filter(
                     part => part.typeId === typ.id
