@@ -15,7 +15,7 @@ export default (props) => {
         {
           types.map(
             typ =>
-            <Col md={4} >
+            <Col md={4} xs={6}>
               <li key={typ.id}>
                 <h3><a href="#">
                   {typ.type}</a></h3>
@@ -38,6 +38,7 @@ export default (props) => {
         }
 
       </ul>
+        {}
       </Row>
     </Grid>
   )
