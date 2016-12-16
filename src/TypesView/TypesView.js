@@ -6,7 +6,7 @@ import {parts, types} from '../data'
 import {Grid,Row,Col} from 'react-bootstrap'
 
 export default (props) => {
-  console.log(types)
+
   return (
     <Grid>
       <h2>Typy części</h2>
@@ -31,7 +31,7 @@ export default (props) => {
                   }
                 </ul>
               </li>
-              </Col>
+            </Col>
           )
         }
       </ul>
