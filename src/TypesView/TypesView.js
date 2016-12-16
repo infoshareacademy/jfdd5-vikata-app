@@ -16,7 +16,9 @@ export default (props) => {
           types.map(
             typ =>
             <Col md={4} >
-              <li key={typ.id}>{typ.type}
+              <li key={typ.id}>
+                <h3>
+                {typ.type}</h3>
                 <ul>
                   {parts.filter(
                     part => part.typeId === typ.id
