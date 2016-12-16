@@ -30,15 +30,14 @@ export default (props) => {
                   )
                   }
                 </ul>
-
               </li>
               </Col>
           )
-
         }
-
       </ul>
-        {}
+        <Col xs={12}>
+          {props.children}
+        </Col>
       </Row>
     </Grid>
   )
