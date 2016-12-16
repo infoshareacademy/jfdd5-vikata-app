@@ -18,27 +18,27 @@ export default (props) =>(
         } jest dostępny/a w sklepach:
       </h2>
         <ul>
+          <ListGroup>
 
-                    {
-                      shops.filter(
-                        shop => shop.parts.find(
-                          part => part.partId === parseInt(props.params.partId)
-                        ) !== undefined
-                      ).map(
-                        shop =>
-                          <ListGroup>
-                            <ListGroupItem key={shop.id}>
-                              {shop.name} cena:
-                            {shop.parts.filter(
-                              part => part.partId === parseInt(props.params.partId)
-                            ).map(
-                              part => part.price
-                            )}
-                            </ListGroupItem>
-                          </ListGroup>
-                      )
-                    }
+            {
+              shops.filter(
+                shop => shop.parts.find(
+                  part => part.partId === parseInt(props.params.partId)
+                ) !== undefined
+              ).map(
+                shop =>
+                  <ListGroupItem key={shop.id}>
+                    {shop.name} cena:
+                    {shop.parts.filter(
+                      part => part.partId === parseInt(props.params.partId)
+                    ).map(
+                      part => part.price
+                    )}
+                  </ListGroupItem>
+              )
+            }
 
+          </ListGroup>
 
         </ul>
     </div>

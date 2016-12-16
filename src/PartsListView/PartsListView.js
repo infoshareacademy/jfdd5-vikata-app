@@ -2,8 +2,10 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
+import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
-import {types} from '../data'
+import {types, parts} from '../data'
 
 export default (props) => (
   <div>
@@ -16,5 +18,27 @@ export default (props) => (
         )
       }
     </h1>
+    <ul>
+      <ListGroup>
+
+        {
+          parts.filter(
+            part => part.typeId === parseInt(props.params.typeUrlId)
+          ).map(
+            part => (
+              <ListGroupItem key={part.id}>
+                {part.name}
+                <Button bsStyle="info">Opis produktu</Button>
+                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id}>
+                  <Button bsStyle="info">Lista hurtowni</Button>
+                </LinkContainer>
+
+                {props.children}
+              </ListGroupItem>
+            )
+          )
+        }
+      </ListGroup>
+    </ul>
   </div>
 )

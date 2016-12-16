@@ -17,8 +17,9 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}/>
 
-    <Route path="/shops/:partId" component={ShopsView}/>
-    <Route path="/partslist/:typeUrlId" component={PartsListView}/>
+    <Route path="/partslist/:typeUrlId" component={PartsListView}>
+      <Route path="/partslist/:typeUrlId/:partId" component={ShopsView}/>
+    </Route>
 
 
   {/*<Route path="*" component={NotFoundView} />*/}
