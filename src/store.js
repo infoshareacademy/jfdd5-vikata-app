@@ -16,6 +16,8 @@ const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window
 
 // FOR REFERENCE ONLY:
 //
-store.subscribe(() => {
+// store.subscribe(() => {
+//
+// })
 
-})
+export default store

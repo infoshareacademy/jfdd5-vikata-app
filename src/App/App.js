@@ -1,10 +1,10 @@
 import React from 'react'
 import {CarSelectionForm} from '../CarSelectionForm'
-// import { connect} from 'react-redux'
+import { connect} from 'react-redux'
 
-// const mapStateToProps = (state) => ({
-//
-// })
+const mapStateToProps = (state) => ({
+
+})
 
 class App extends React.Component {
   render() {
@@ -22,5 +22,5 @@ class App extends React.Component {
   }
 }
 
-//
-// export default connect(mapStateToProps)(App);
+
+export default connect(mapStateToProps)(App);
