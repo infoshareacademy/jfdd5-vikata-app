@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import {parts, types} from '../data'
+import { Link } from 'react-router'
 import {Grid,Row,Col} from 'react-bootstrap'
 
 export default (props) => {
@@ -17,8 +18,9 @@ export default (props) => {
             typ =>
             <Col md={4} xs={6}>
               <li key={typ.id}>
-                <h3><a href="#">
-                  {typ.type}</a></h3>
+                <h3>
+                  <Link to={'/types/' + typ.id}>
+                  {typ.type}</Link></h3>
                 <ul>
                   {parts.filter(
                     part => part.typeId === typ.id
