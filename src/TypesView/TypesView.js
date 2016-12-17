@@ -2,7 +2,8 @@
  * Created by rafalmiler on 15.12.16.
  */
 import React from 'react'
-import {parts, types} from '../data'
+import { types } from '../data'
+// import { parts } from '../data'
 import { Link } from 'react-router'
 import {Grid,Row,Col} from 'react-bootstrap'
 
@@ -22,6 +23,7 @@ export default (props) => {
                   <Link to={'/types/' + typ.id}>
                   {typ.type}</Link>
                 </h3>
+                <img src="images/bulbs.jpg"/>
                 {/*<ul>*/}
                 {/*{parts.filter(*/}
                   {/*part => part.typeId === typ.id*/}
