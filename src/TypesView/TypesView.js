@@ -20,17 +20,18 @@ export default (props) => {
               <li key={typ.id}>
                 <h3>
                   <Link to={'/types/' + typ.id}>
-                  {typ.type}</Link></h3>
+                  {typ.type}</Link>
+                </h3>
                 <ul>
-                  {parts.filter(
-                    part => part.typeId === typ.id
-                  ).map(
-                    part =>
-                      <li key={part.id}>
-                        {part.name}
-                      </li>
-                  )
-                  }
+                {parts.filter(
+                  part => part.typeId === typ.id
+                ).map(
+                  part =>
+                    <li key={part.id}>
+                      {part.name}
+                    </li>
+                )
+                }
                 </ul>
               </li>
             </Col>
