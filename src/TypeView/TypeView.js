@@ -16,8 +16,7 @@ export default (props) => (
               <div>
                 <li key={typ.id}>
                   <h3>
-                    <a href="#">
-                      {typ.type}</a>
+                      {typ.type}
                   </h3>
                   <ul>
                     {parts.filter(
@@ -25,7 +24,9 @@ export default (props) => (
                     ).map(
                       part =>
                         <li key={part.id}>
+                          <a href="#">
                           {part.name}
+                        </a>
                         </li>
                     )
                     }
