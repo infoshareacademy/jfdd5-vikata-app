@@ -10,11 +10,13 @@ import { PartInfoView } from './PartInfoView'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
-
+import { Provider } from 'react-redux'
+import store from './store'
 
 import './index.css';
 
 ReactDOM.render(
+  <Provider store={store}>
   <Router history={browserHistory}>
     <Route path="/" component={App}/>
 
@@ -25,9 +27,12 @@ ReactDOM.render(
 
 
   {/*<Route path="*" component={NotFoundView} />*/}
-  </Router>,
+  </Router>
+ </Provider>,
   document.getElementById('root')
 
 
 
 );
+
+
