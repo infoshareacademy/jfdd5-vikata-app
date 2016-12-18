@@ -17,10 +17,6 @@ ReactDOM.render(
     <Route path="/" component={App}/>
 
 
-
-
-
-
   {/*<Route path="*" component={NotFoundView} />*/}
   </Router>
  </Provider>,
