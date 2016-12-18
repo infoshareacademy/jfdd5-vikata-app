@@ -10,8 +10,6 @@ export default class CarSelectionForm extends React.Component {
   constructor() {
     super()
 
-
-
     this.handleBrandClick = eventKey => {
       var selectedBrandData = brands.find(brand => brand.id === eventKey);
       this.setState({
