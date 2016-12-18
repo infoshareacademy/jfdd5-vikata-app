@@ -10,10 +10,13 @@ export default class CarSelectionForm extends React.Component {
   constructor() {
     super()
 
+
+
     this.handleBrandClick = eventKey => {
       var selectedBrandData = brands.find(brand => brand.id === eventKey);
       this.setState({
-        brand: selectedBrandData
+        brand: selectedBrandData,
+        model: {name: 'wybierz model'}
       })
     }
 
@@ -44,6 +47,8 @@ export default class CarSelectionForm extends React.Component {
         <MenuItem eventKey={model.id}>{model.name} </MenuItem>
     );
 
+
+
     return (
 
       <div>
@@ -54,12 +59,12 @@ export default class CarSelectionForm extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavDropdown bsStyle="1" title={this.state.brand.name} key={1} id={`split-button-basic-1`}
+            <NavDropdown bsStyle="1" title={this.state.brand.name} key={1} id={`nav-dropdown`}
                          onSelect={this.handleBrandClick}>
               {brandsListItems}
             </NavDropdown>
 
-            <NavDropdown bsStyle="1" title={this.state.model.name} key={2} id={`split-button-basic-1`}
+            <NavDropdown bsStyle="1"  disabled={this.state.brand.name ==='wybierz markę'}title={this.state.model.name} key={2} id={`nav-dropdown`}
                          onSelect={this.handleModelClick}>
               {modelsListItems}
             </NavDropdown>
