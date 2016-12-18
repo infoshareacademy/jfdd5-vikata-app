@@ -6,6 +6,7 @@ import { App } from './App'
 
 import { ShopsView } from './ShopsView'
 import { PartsListView } from './PartsListView'
+import { PartInfoView } from './PartInfoView'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
@@ -18,7 +19,8 @@ ReactDOM.render(
     <Route path="/" component={App}/>
 
     <Route path="/partslist/:typeUrlId" component={PartsListView}>
-      <Route path="/partslist/:typeUrlId/:partId" component={ShopsView}/>
+      <Route path="/partslist/:typeUrlId/:partId" component={PartInfoView}/>
+      <Route path="/partslist/:typeUrlId/:partId/2" component={ShopsView}/>
     </Route>
 
 

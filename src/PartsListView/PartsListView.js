@@ -30,8 +30,12 @@ export default (props) => (
                 <h2>
                   {part.name}
                 </h2>
-                <Button bsStyle="info">Opis produktu</Button>
+
                 <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id}>
+                  <Button bsStyle="info">Opis produktu</Button>
+                </LinkContainer>
+
+                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id+"/"+2}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
