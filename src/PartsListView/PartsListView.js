@@ -4,15 +4,25 @@
 import React from 'react'
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { connect } from 'react-redux'
 
-import {types, parts} from '../data'
+// import {types, parts} from '../data'
 
-export default (props) => (
+const mapStateToProps = state => ({
+  partsTypes: state.appData.partsTypes,
+  parts: state.appData.parts,
+  selectedType: state.appData.partsTypes,
+  selectedPart: state.appData.selectedPart,
+  selectedPartInfo: state.appData.selectedPartInfo,
+
+})
+
+const PartsListView = (props) => (
   <div>
     <h1>Lista części typu:
       {
-        types.filter(
-          type => type.id === parseInt(props.params.typeUrlId)
+        partsTypes.filter(
+          type => type.id === props.selectedType
         ).map(
           type => type.type
         )
@@ -22,8 +32,8 @@ export default (props) => (
       <ListGroup>
 
         {
-          parts.filter(
-            part => part.typeId === parseInt(props.params.typeUrlId)
+          props.parts.filter(
+            part => part.typeId === props.selectedType
           ).map(
             part => (
               <ListGroupItem key={part.id}>
@@ -31,11 +41,11 @@ export default (props) => (
                   {part.name}
                 </h2>
 
-                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id}>
+                <LinkContainer to={props.params.selectedType+"/"+props.params.selectedPart}>
                   <Button bsStyle="info">Opis produktu</Button>
                 </LinkContainer>
 
-                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id+"/"+2}>
+                <LinkContainer to={props.params.typeUrlId+"/"+part.id+"/"+2}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
@@ -48,3 +58,5 @@ export default (props) => (
     </ul>
   </div>
 )
+
+export default connect(mapStateToProps)(PartsListView)
