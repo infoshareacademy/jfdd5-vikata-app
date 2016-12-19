@@ -13,7 +13,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_FILTER':
+    case 'SET_BRAND':
       return {
        ...state,
         filterNames: state.filterNames.concat(action.filterName)
@@ -25,3 +25,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+

@@ -2,12 +2,14 @@
  * Created by mlacki on 16.12.16.
  */
 import { createStore, combineReducers } from 'redux'
+import {reducer as appReducer} from './App'
+
 
 
 
 
 const reducer = combineReducers({
-
+  appData: appReducer
 
 })
 
