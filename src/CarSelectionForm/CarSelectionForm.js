@@ -1,17 +1,31 @@
 /**
  * Created by mlacki on 14.12.16.
  */
-import {SplitButton, MenuItem, Navbar, Nav, NavDropdown} from "react-bootstrap";
+import {MenuItem, Navbar, Nav, NavDropdown} from "react-bootstrap";
 import React from "react";
-import {brands, models} from "../data";
+import { connect } from 'react-redux'
+// import {brands, models} from "../data";
 
-export default class CarSelectionForm extends React.Component {
+
+const mapStateToProps = state => ({
+  // students: state.studentsData.students
+  brands: state.appData.brands,
+  models: state.appData.models
+
+})
+
+const mapDispatchToProps = dispatch => ({
+  // createStudent: studentName => dispatch({type: 'CREATE_STUDENT', name: studentName})
+})
+
+
+class CarSelectionForm extends React.Component {
 
   constructor() {
     super()
 
     this.handleBrandClick = eventKey => {
-      var selectedBrandData = brands.find(brand => brand.id === eventKey);
+      var selectedBrandData = this.props.brands.find(brand => brand.id === eventKey);
       this.setState({
         brand: selectedBrandData,
         model: {name: 'wybierz model'}
@@ -24,7 +38,7 @@ export default class CarSelectionForm extends React.Component {
     }
 
     this.handleModelClick = eventKey => {
-      var selectedModel = models.find(model => model.id === eventKey);
+      var selectedModel = this.props.models.find(model => model.id === eventKey);
       this.setState({
         model: selectedModel
       })
@@ -33,12 +47,12 @@ export default class CarSelectionForm extends React.Component {
 
   render() {
 
-    const brandsListItems = brands.map(
+    const brandsListItems = this.props.brands.map(
       brand =>
         <MenuItem eventKey={brand.id}>{brand.name} </MenuItem>
     );
 
-    const modelsListItems = models.filter(
+    const modelsListItems = this.props.models.filter(
       model => this.state.brand.modelsIds ? this.state.brand.modelsIds.indexOf(model.id) !== -1 : false
     ).map(
       model =>
@@ -72,3 +86,5 @@ export default class CarSelectionForm extends React.Component {
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarSelectionForm)
