@@ -1,5 +1,4 @@
-
-import {brands, models, parts, shops, types} from "../data"
+import {brands, models, parts, shops, types} from "../data";
 
 
 const initialState = {
@@ -7,18 +6,18 @@ const initialState = {
   models: models,
   parts: parts,
   shops: shops,
-  types: types
-
+  types: types,
+  selectedBrand: null,
+  selectedModel: null
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'SET_BRAND':
       return {
-       ...state,
-        filterNames: state.filterNames.concat(action.filterName)
+        ...state,
+        selectedBrand: state.brands.find(brand => action.brandId === brand.id)
       }
-
 
 
     default:
