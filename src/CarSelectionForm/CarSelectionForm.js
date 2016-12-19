@@ -27,19 +27,18 @@ class CarSelectionForm extends React.Component {
 
   render() {
 
+    console.log(this.props)
     const brandsListItems = this.props.brands.map(
       brand =>
         <MenuItem eventKey={brand.id}>{brand.name}</MenuItem>
     );
 
-    const modelsListItems = this.props.models.filter(
-      model =>
-        this.props.selectedBrand ?
-          this.state.selectedBrand.modelsIds.indexOf(model.id) !== -1 : false
+    const modelsListItems = this.props.selectedBrand !== null ? this.props.models.filter(
+      model => this.props.selectedBrand.modelsIds.indexOf(model.id) !== -1
     ).map(
       model =>
         <MenuItem eventKey={model.id}>{model.name}</MenuItem>
-    );
+    ) : []
 
     return (
       <div>
