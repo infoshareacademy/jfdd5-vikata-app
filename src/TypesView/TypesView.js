@@ -23,7 +23,10 @@ export default (props) => {
                   <Link to={'/types/' + typ.id}>
                   {typ.type}</Link>
                 </h3>
-                <img src="images/bulbs.jpg"/>
+
+                <img src={process.env.PUBLIC_URL + '/img/bulbs.jpg'}
+                     role="presentation"
+                />
                 {/*<ul>*/}
                 {/*{parts.filter(*/}
                   {/*part => part.typeId === typ.id*/}
