@@ -4,18 +4,22 @@
 export default [
   {
     id: 1,
-    type: 'Opony'
+    type: 'Opony',
+    image: 'tyre.png'
   },
   {
     id: 2,
-    type: 'Żarówki'
+    type: 'Żarówki',
+    image: 'bulbs.jpg'
   },
   {
     id: 3,
-    type: 'Audio'
+    type: 'Audio',
+    image: 'audio.png'
   },
   {
     id: 4,
-    type: 'Silnik'
+    type: 'Silnik',
+    image: 'engine.png'
   }
 ]

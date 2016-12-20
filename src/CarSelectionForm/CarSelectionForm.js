@@ -1,54 +1,46 @@
 /**
  * Created by mlacki on 14.12.16.
  */
-import {SplitButton, MenuItem, Navbar, Nav, NavDropdown} from "react-bootstrap";
+import {MenuItem, Navbar, Nav, NavDropdown, NavItem} from "react-bootstrap";
 import React from "react";
-import {brands, models} from "../data";
+import { connect } from 'react-redux'
 
-export default class CarSelectionForm extends React.Component {
 
-  constructor() {
-    super()
 
-    this.handleBrandClick = eventKey => {
-      var selectedBrandData = brands.find(brand => brand.id === eventKey);
-      this.setState({
-        brand: selectedBrandData,
-        model: {name: 'wybierz model'}
-      })
-    }
+const mapStateToProps = state => ({
+  // students: state.studentsData.students
+  brands: state.appData.brands,
+  models: state.appData.models,
+  selectedBrand: state.appData.selectedBrand,
+  selectedModel: state.appData.selectedModel
+})
 
-    this.state = {
-      brand: {name: 'wybierz markę'},
-      model: {name: 'wybierz model'}
-    }
+const mapDispatchToProps = dispatch => ({
+  setBrand: brandId => dispatch({type: 'SET_BRAND', brandId: brandId}),
+  setModel: modelId => dispatch({type: 'SET_MODEL', modelId: modelId}),
+  resetSelection: resetId => dispatch({type: 'RESET'})
+})
 
-    this.handleModelClick = eventKey => {
-      var selectedModel = models.find(model => model.id === eventKey);
-      this.setState({
-        model: selectedModel
-      })
-    }
-  }
+
+class CarSelectionForm extends React.Component {
+
 
   render() {
 
-    const brandsListItems = brands.map(
+    console.log(this.props)
+    const brandsListItems = this.props.brands.map(
       brand =>
-        <MenuItem eventKey={brand.id}>{brand.name} </MenuItem>
+        <MenuItem eventKey={brand.id}>{brand.name}</MenuItem>
     );
 
-    const modelsListItems = models.filter(
-      model => this.state.brand.modelsIds ? this.state.brand.modelsIds.indexOf(model.id) !== -1 : false
+    const modelsListItems = this.props.selectedBrand !== null ? this.props.models.filter(
+      model => this.props.selectedBrand.modelsIds.indexOf(model.id) !== -1
     ).map(
       model =>
-        <MenuItem eventKey={model.id}>{model.name} </MenuItem>
-    );
-
-
+        <MenuItem eventKey={model.id}>{model.name}</MenuItem>
+    ) : []
 
     return (
-
       <div>
         <Navbar>
           <Navbar.Header>
@@ -57,18 +49,32 @@ export default class CarSelectionForm extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavDropdown bsStyle="1" title={this.state.brand.name} key={1} id={`nav-dropdown`}
-                         onSelect={this.handleBrandClick}>
+            <NavDropdown bsStyle="1"
+                         title={this.props.selectedBrand ? this.props.selectedBrand.name : 'Select brand'}
+                         key={1}
+                         id={`nav-dropdown`}
+                         onSelect={(eventKey) => this.props.setBrand(eventKey)}>
               {brandsListItems}
             </NavDropdown>
 
-            <NavDropdown bsStyle="1"  disabled={this.state.brand.name ==='wybierz markę'}title={this.state.model.name} key={2} id={`nav-dropdown`}
-                         onSelect={this.handleModelClick}>
+            <NavDropdown bsStyle="1"
+                         disabled={this.props.selectedBrand === null}
+                         title={this.props.selectedModel ? this.props.selectedModel.name : 'Select model'}
+                         key={2}
+                         id={`nav-dropdown`}
+                         onSelect={(eventKey) => this.props.setModel(eventKey)}>
               {modelsListItems}
             </NavDropdown>
+
+
+             <NavItem onSelect={() =>this.props.resetSelection() }> Resetuj wybór</NavItem>
+
+
           </Nav>
         </Navbar>
       </div>
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarSelectionForm)
