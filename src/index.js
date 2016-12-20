@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 import { App } from './App'
 import { TypesView } from './TypesView'
@@ -26,9 +26,9 @@ ReactDOM.render(
       </Route>
     </Route>
 
-    <Route path="/partslist/:typeUrlId" component={PartsListView}>
-      <Route path="/partslist/:typeUrlId/:partId" component={PartInfoView}/>
-      <Route path="/partslist/:typeUrlId/:partId/2" component={ShopsView}/>
+    <Route path="/:typeUrlId" component={PartsListView}>
+      <Route path="/:typeUrlId/:partId" component={PartInfoView}/>
+      <Route path="/:typeUrlId/:partId/2" component={ShopsView}/>
     </Route>
 
 

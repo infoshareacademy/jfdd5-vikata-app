@@ -3,11 +3,11 @@
  */
 import { createStore, combineReducers } from 'redux'
 
-
+import { reducer as PartsListReducer } from './PartsListView'
 
 
 const reducer = combineReducers({
-
+appData: PartsListReducer
 
 })
 

@@ -11,18 +11,30 @@ import { connect } from 'react-redux'
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   parts: state.appData.parts,
-  selectedType: state.appData.partsTypes,
+  selectedType: state.appData.selectedType,
   selectedPart: state.appData.selectedPart,
-  selectedPartInfo: state.appData.selectedPartInfo,
+  selectedPartInfo: state.appData.selectedPartInfo
+})
 
+const mapDispatchToProps = dispatch => ({
+  opony: () => dispatch({type: 'OPONY'}),
+  zarowki: () => dispatch({type: 'ZAROWKI'})
 })
 
 const PartsListView = (props) => (
   <div>
+    <Button bsStyle="info" onClick={props.opony}>Opony</Button>
+
+    <Button bsStyle="info" onClick={props.zarowki}>Żarówki</Button>
+    {/*console.log({props.partsTypes});*/}
     <h1>Lista części typu:
       {
-        partsTypes.filter(
+        props.partsTypes.map(
+          type => (console.log(type, props.selectedType), type)
+        ).filter(
           type => type.id === props.selectedType
+        ).map(
+          type => (console.log(type), type)
         ).map(
           type => type.type
         )
@@ -45,11 +57,11 @@ const PartsListView = (props) => (
                   <Button bsStyle="info">Opis produktu</Button>
                 </LinkContainer>
 
-                <LinkContainer to={props.params.typeUrlId+"/"+part.id+"/"+2}>
+                <LinkContainer to={props.params.selectedType + "/" + props.params.selectedPart + "/" + 2}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
-                {part.id == props.params.partId ? props.children : null}
+                {/*{part.id === props.params.partId ? props.children : null}*/}
               </ListGroupItem>
             )
           )
@@ -59,4 +71,4 @@ const PartsListView = (props) => (
   </div>
 )
 
-export default connect(mapStateToProps)(PartsListView)
+export default connect(mapStateToProps, mapDispatchToProps)(PartsListView)
