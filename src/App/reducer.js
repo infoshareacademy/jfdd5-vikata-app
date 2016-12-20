@@ -25,16 +25,31 @@ export default (state = initialState, action) => {
         ...state,
         selectedModel: state.models.find(model => action.modelId === model.id)
       }
+
     case 'OPONY':
       return  {
         ...state,
         selectedType: 1
       }
+
     case 'ZAROWKI':
       return {
         ...state,
         selectedType: 2
       }
+
+    case 'AUDIO':
+      return  {
+        ...state,
+        selectedType: 3
+      }
+
+    case 'SILNIK':
+      return {
+        ...state,
+        selectedType: 4
+      }
+
     case 'RESET':
 
       return initialState

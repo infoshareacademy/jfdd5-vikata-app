@@ -10,12 +10,15 @@ import { connect } from 'react-redux'
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   parts: state.appData.parts,
-  selectedType: state.appData.selectedType
+  selectedType: state.appData.selectedType,
+  selectedModel: state.appData.selectedModel
 })
 
 const mapDispatchToProps = dispatch => ({
   opony: () => dispatch({type: 'OPONY'}),
-  zarowki: () => dispatch({type: 'ZAROWKI'})
+  zarowki: () => dispatch({type: 'ZAROWKI'}),
+  audio: () => dispatch({type: 'AUDIO'}),
+  silnik: () => dispatch({type: 'SILNIK'})
 })
 
 const PartsListView = (props) => (
@@ -23,15 +26,16 @@ const PartsListView = (props) => (
     <Button bsStyle="info" onClick={props.opony}>Opony</Button>
 
     <Button bsStyle="info" onClick={props.zarowki}>Żarówki</Button>
+
+    <Button bsStyle="info" onClick={props.audio}>Audio</Button>
+
+    <Button bsStyle="info" onClick={props.silnik}>Silnik</Button>
     {/*console.log({props.partsTypes});*/}
     <h1>Lista części typu:
       {
-        props.partsTypes.map(
-          type => (console.log(type, props.selectedType), type)
-        ).filter(
-          type => type.id === props.selectedType
-        ).map(
-          type => (console.log(type), type)
+        props.partsTypes.filter(
+          type =>
+          type.id === props.selectedType
         ).map(
           type => type.type
         )
@@ -41,10 +45,13 @@ const PartsListView = (props) => (
       <ListGroup>
 
         {
+
           props.parts.filter(
             part => part.typeId === props.selectedType
+          ).filter(
+            (part) => (props.selectedModel != null && props.selectedModel.partsIds.indexOf( part.id ) != -1)
           ).map(
-            part => (
+            (part) => (
               <ListGroupItem key={part.id}>
                 <h2>
                   {part.name}
