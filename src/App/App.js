@@ -2,6 +2,7 @@ import React from 'react'
 import {CarSelectionForm} from '../CarSelectionForm'
 import { connect} from 'react-redux'
 import './App.css';
+import { TypesView } from '../TypesView'
 
 const mapStateToProps = (state) => ({
 
