@@ -22,9 +22,12 @@ export default (props) => {
                       <Link to={'/types/' + typ.id}>
                         {typ.type}</Link>
                     </h3>
-                    <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
-                         role="presentation"
-                    />
+                    <Link to={'/types/' + typ.id}>
+                      <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
+                           role="presentation"
+                      />
+                    </Link>
+
                   </li>
                 </Col>
             )
