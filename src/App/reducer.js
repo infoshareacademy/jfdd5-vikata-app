@@ -25,6 +25,10 @@ export default (state = initialState, action) => {
         selectedModel: state.models.find(model => action.modelId === model.id)
       }
 
+    case 'RESET':
+
+      return initialState
+
 
     default:
       return state
