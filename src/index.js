@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import { App } from './App'
-import { TypesView } from './TypesView'
-import { TypeView } from './TypeView'
 
 import { ShopsView } from './ShopsView'
 import { PartsListView } from './PartsListView'

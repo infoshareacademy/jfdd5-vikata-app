@@ -6,9 +6,10 @@ const initialState = {
   models: models,
   parts: parts,
   shops: shops,
-  types: types,
+  partsTypes: types,
   selectedBrand: null,
-  selectedModel: null
+  selectedModel: null,
+  selectedType: 1
 }
 
 export default (state = initialState, action) => {
@@ -24,7 +25,16 @@ export default (state = initialState, action) => {
         ...state,
         selectedModel: state.models.find(model => action.modelId === model.id)
       }
-
+    case 'OPONY':
+      return  {
+        ...state,
+        selectedType: 1
+      }
+    case 'ZAROWKI':
+      return {
+        ...state,
+        selectedType: 2
+      }
     case 'RESET':
 
       return initialState
