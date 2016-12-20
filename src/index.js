@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import { App } from './App'
 import { TypesView } from './TypesView'
@@ -21,17 +21,10 @@ ReactDOM.render(
   <Provider store={store}>
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <Route path="/types" component={TypesView}>
-        <Route path="/types/:typeId" component={TypeView}/>
-      </Route>
+      <IndexRoute component={PartsListView}/>
+        <Route path="/:partId" component={PartInfoView}/>
+        <Route path="/:partId/shops" component={ShopsView} />
     </Route>
-
-    <Route path="/:typeUrlId" component={PartsListView}>
-      <Route path="/:typeUrlId/:partId" component={PartInfoView}/>
-      <Route path="/:typeUrlId/:partId/2" component={ShopsView}/>
-    </Route>
-
-
   {/*<Route path="*" component={NotFoundView} />*/}
   </Router>
  </Provider>,

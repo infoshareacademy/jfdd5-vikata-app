@@ -6,14 +6,11 @@ import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
 
-// import {types, parts} from '../data'
 
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   parts: state.appData.parts,
-  selectedType: state.appData.selectedType,
-  selectedPart: state.appData.selectedPart,
-  selectedPartInfo: state.appData.selectedPartInfo
+  selectedType: state.appData.selectedType
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -53,21 +50,21 @@ const PartsListView = (props) => (
                   {part.name}
                 </h2>
 
-                <LinkContainer to={props.params.selectedType+"/"+props.params.selectedPart}>
+                <LinkContainer to={part.id+""}>
                   <Button bsStyle="info">Opis produktu</Button>
                 </LinkContainer>
 
-                <LinkContainer to={props.params.selectedType + "/" + props.params.selectedPart + "/" + 2}>
+                <LinkContainer to={part.id + "/shops"}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
-                {/*{part.id === props.params.partId ? props.children : null}*/}
               </ListGroupItem>
             )
           )
         }
       </ListGroup>
     </ul>
+    {props.children}
   </div>
 )
 
