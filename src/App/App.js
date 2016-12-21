@@ -2,7 +2,7 @@ import React from 'react'
 import {CarSelectionForm} from '../CarSelectionForm'
 import { connect} from 'react-redux'
 import './App.css';
-import { TypesView } from '../TypesView'
+import { PartsListView } from '../PartsListView'
 
 const mapStateToProps = (state) => ({
 
@@ -17,8 +17,9 @@ class App extends React.Component {
         </div>
 
       <CarSelectionForm/>
+          {this.props.children}
 
-        {this.props.children}
+
       </div>
     );
   }

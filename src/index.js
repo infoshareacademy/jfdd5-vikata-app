@@ -20,8 +20,10 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={PartsListView}/>
-        <Route path="/:partId" component={PartInfoView}/>
-        <Route path="/:partId/shops" component={ShopsView} />
+      <Route path="/parts-list" component={PartsListView}>
+        <Route path="/parts-list/:partId" component={PartInfoView}/>
+        <Route path="/parts-list/:partId/shops" component={ShopsView} />
+      </Route>
     </Route>
   {/*<Route path="*" component={NotFoundView} />*/}
   </Router>
