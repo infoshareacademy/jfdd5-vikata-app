@@ -18,9 +18,6 @@ class App extends React.Component {
 
       <CarSelectionForm/>
 
-        <p className="App-intro">
-          LET'S GET STARTED !!!
-        </p>
         {this.props.children}
       </div>
     );

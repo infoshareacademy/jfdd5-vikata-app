@@ -4,15 +4,38 @@
 import React from 'react'
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { connect } from 'react-redux'
 
-import {types, parts} from '../data'
 
-export default (props) => (
+const mapStateToProps = state => ({
+  partsTypes: state.appData.partsTypes,
+  parts: state.appData.parts,
+  selectedType: state.appData.selectedType,
+  selectedModel: state.appData.selectedModel
+})
+
+const mapDispatchToProps = dispatch => ({
+  opony: () => dispatch({type: 'OPONY'}),
+  zarowki: () => dispatch({type: 'ZAROWKI'}),
+  audio: () => dispatch({type: 'AUDIO'}),
+  silnik: () => dispatch({type: 'SILNIK'})
+})
+
+const PartsListView = (props) => (
   <div>
+    <Button bsStyle="info" onClick={props.opony}>Opony</Button>
+
+    <Button bsStyle="info" onClick={props.zarowki}>Żarówki</Button>
+
+    <Button bsStyle="info" onClick={props.audio}>Audio</Button>
+
+    <Button bsStyle="info" onClick={props.silnik}>Silnik</Button>
+    {/*console.log({props.partsTypes});*/}
     <h1>Lista części typu:
       {
-        types.filter(
-          type => type.id === parseInt(props.params.typeUrlId)
+        props.partsTypes.filter(
+          type =>
+          type.id === props.selectedType
         ).map(
           type => type.type
         )
@@ -22,29 +45,34 @@ export default (props) => (
       <ListGroup>
 
         {
-          parts.filter(
-            part => part.typeId === parseInt(props.params.typeUrlId)
+
+          props.parts.filter(
+            part => part.typeId === props.selectedType
+          ).filter(
+            (part) => (props.selectedModel != null && props.selectedModel.partsIds.indexOf( part.id ) != -1)
           ).map(
-            part => (
+            (part) => (
               <ListGroupItem key={part.id}>
                 <h2>
                   {part.name}
                 </h2>
 
-                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id}>
+                <LinkContainer to={part.id+""}>
                   <Button bsStyle="info">Opis produktu</Button>
                 </LinkContainer>
 
-                <LinkContainer to={"/partslist/"+props.params.typeUrlId+"/"+part.id+"/"+2}>
+                <LinkContainer to={part.id + "/shops"}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
 
-                {part.id == props.params.partId ? props.children : null}
               </ListGroupItem>
             )
           )
         }
       </ListGroup>
     </ul>
+    {props.children}
   </div>
 )
+
+export default connect(mapStateToProps, mapDispatchToProps)(PartsListView)
