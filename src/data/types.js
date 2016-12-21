@@ -21,5 +21,10 @@ export default [
     id: 4,
     type: 'Silnik',
     image: 'engine.png'
+  },
+  {
+    id: 5,
+    type: 'Nadwozie',
+    image: 'engine.png'
   }
 ]
