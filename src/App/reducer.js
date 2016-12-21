@@ -17,7 +17,8 @@ export default (state = initialState, action) => {
     case 'SET_BRAND':
       return {
         ...state,
-        selectedBrand: state.brands.find(brand => action.brandId === brand.id)
+        selectedBrand: state.brands.find(brand => action.brandId === brand.id),
+        selectedModel: null
       }
 
       case 'SET_MODEL':
