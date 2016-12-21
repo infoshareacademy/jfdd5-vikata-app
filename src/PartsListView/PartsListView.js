@@ -41,7 +41,6 @@ const PartsListView = (props) => (
         )
       }
     </h1>
-    <ul>
       <ListGroup>
 
         {
@@ -49,7 +48,7 @@ const PartsListView = (props) => (
           props.parts.filter(
             part => part.typeId === props.selectedType
           ).filter(
-            (part) => (props.selectedModel != null && props.selectedModel.partsIds.indexOf( part.id ) != -1)
+            (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) != -1
           ).map(
             (part) => (
               <ListGroupItem key={part.id}>
@@ -57,21 +56,19 @@ const PartsListView = (props) => (
                   {part.name}
                 </h2>
 
-                <LinkContainer to={part.id+""}>
+                <LinkContainer to={'/parts-list/' + part.id+""}>
                   <Button bsStyle="info">Opis produktu</Button>
                 </LinkContainer>
 
-                <LinkContainer to={part.id + "/shops"}>
+                <LinkContainer to={'/parts-list/' + part.id + "/shops"}>
                   <Button bsStyle="info">Lista hurtowni</Button>
                 </LinkContainer>
-
+                {part.id === parseInt(props.params.partId) ? props.children : null}
               </ListGroupItem>
             )
           )
         }
       </ListGroup>
-    </ul>
-    {props.children}
   </div>
 )
 
