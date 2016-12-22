@@ -19,12 +19,10 @@ const PartsListView = (props) => (
     <Row className="show-grid">
       <Well>
     <h1>Lista części typu: {
-        props.partsTypes.filter(
+        props.partsTypes.find(
           type =>
           type.id === props.selectedType
-        ).map(
-          type => type.type
-        ).toString().toLowerCase()
+        ).type.toLowerCase()
       }
     </h1>
       <ListGroup>
