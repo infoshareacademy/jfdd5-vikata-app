@@ -8,7 +8,17 @@
 }
 
 .App-header {
-  background-color: #222;
+
+  background: url("../images/header-background.jpg")no-repeat fixed;
+  background-position: center -400px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: 0%;
+
+
+
   height: 150px;
   padding: 20px;
   color: white;
