@@ -10,18 +10,9 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case 'OPONY':
-      return  {
-        ...state,
-        selectedType: 1
-      }
-    case 'ZAROWKI':
-      return {
-        ...state,
-        selectedType: 2
-      }
-    default:
-      return state
+  return {
+    ...state,
+    selectedType: action.type
   }
+
 }

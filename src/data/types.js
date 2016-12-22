@@ -22,4 +22,5 @@ export default [
     type: 'Silnik',
     image: 'engine.png'
   }
+
 ]
