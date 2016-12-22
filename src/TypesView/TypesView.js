@@ -5,7 +5,6 @@ import React from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 import {connect} from 'react-redux'
-import {Link} from 'react-router'
 import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
 
 import './TypesView.css'
