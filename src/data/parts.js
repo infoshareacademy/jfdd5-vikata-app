@@ -78,5 +78,11 @@ export default [
     description: ['Przełącznik zespolony z funkcją wycieraczki/spryskiwacza tylnej szyby,' +
     ' czarny,do modeli z tylną wycieraczką'],
     typeId: 5
+  },
+  {
+    id: 12,
+    name: 'Błotnik przedni lewy',
+    description: ['Błotnik przedni lewy, cynkowany, czarny'],
+    typeId: 6
   }
 ]
