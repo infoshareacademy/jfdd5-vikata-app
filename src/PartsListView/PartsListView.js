@@ -18,8 +18,7 @@ const PartsListView = (props) => (
   <Grid>
     <Row className="show-grid">
       <Well>
-    <h1>Lista części typu:
-      {
+    <h1>Lista części typu: {
         props.partsTypes.filter(
           type =>
           type.id === props.selectedType
