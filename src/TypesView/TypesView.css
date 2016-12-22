@@ -1,0 +1,9 @@
+.TypesView-tile {
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.TypesView-selected-type {
+  box-shadow: 0 5px 10px #777;
+}
