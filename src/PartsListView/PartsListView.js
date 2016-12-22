@@ -5,7 +5,7 @@ import React from 'react'
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
-
+import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
 
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
@@ -15,8 +15,9 @@ const mapStateToProps = state => ({
 })
 
 const PartsListView = (props) => (
-  <div>
-
+  <Grid>
+    <Row className="show-grid">
+      <Well>
     <h1>Lista części typu:
       {
         props.partsTypes.filter(
@@ -53,7 +54,10 @@ const PartsListView = (props) => (
           )
         }
       </ListGroup>
-  </div>
+        <Clearfix/>
+      </Well>
+    </Row>
+  </Grid>
 )
 
 export default connect(mapStateToProps)(PartsListView)
