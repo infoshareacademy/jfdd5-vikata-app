@@ -51,5 +51,4 @@ const TypesView = (props) => (
   </Grid>
 )
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(TypesView)
