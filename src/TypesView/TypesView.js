@@ -6,10 +6,13 @@ import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 import { connect } from 'react-redux'
 import {Link} from 'react-router'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
+
+import './TypesView.css'
 
 const mapStateToProps = state => ({
-  partsTypes: state.appData.partsTypes
+  partsTypes: state.appData.partsTypes,
+  selectedType: state.appData.selectedType,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -21,21 +24,31 @@ const TypesView = (props) => (
     <h2>Typy części</h2>
     <Row className="show-grid">
       <ListGroup>
+        <Well>
         {
           props.partsTypes.map(
             typ =>
-              <Col md={4} xs={6}>
-                <ListGroupItem key={typ.id}>
-                  <Link to="">
+              <Col md={4}
+                   xs={6}
+                   onClick={()=>props.showType(typ.id)}
+                   className="TypesView-tile">
+                <ListGroupItem key={typ.id}
+                               className={
+                                 typ.id === props.selectedType ?
+                                   'TypesView-selected-type' : ''
+                               }>
+
                     <h2>{typ.type}</h2>
                     <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
-                         role="presentation" onClick={()=>props.showType(typ.id)}
+                         role="presentation"
                     />
-                  </Link>
+
                 </ListGroupItem>
               </Col>
           )
         }
+        <Clearfix/>
+        </Well>
       </ListGroup>
     </Row>
   </Grid>

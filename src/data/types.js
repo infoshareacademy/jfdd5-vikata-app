@@ -32,5 +32,4 @@ export default [
     type: 'Nadwozie',
     image: 'nadwozie.jpg'
   }
-
 ]
