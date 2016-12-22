@@ -2,36 +2,46 @@
  * Created by rafalmiler on 15.12.16.
  */
 import React from 'react'
-import {types} from '../data'
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
+
+import { connect } from 'react-redux'
 import {Link} from 'react-router'
 import {Grid, Row, Col} from 'react-bootstrap'
 
-export default (props) => {
+const mapStateToProps = state => ({
+  partsTypes: state.appData.partsTypes
+})
 
-  return (
-    <Grid>
-      <h2>Typy części</h2>
-      <Row className="show-grid">
-        <ul>
-          {
-            types.map(
-              typ =>
-                <Col md={4} xs={6}>
-                  <li key={typ.id}>
-                    <Link to={'/types/' + typ.id}>
-                      <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
-                           role="presentation"
-                      />
-                    </Link>
-                  </li>
-                </Col>
-            )
-          }
-        </ul>
-        <Col xs={12}>
-          {props.children}
-        </Col>
-      </Row>
-    </Grid>
-  )
-}
+const mapDispatchToProps = dispatch => ({
+  showType: (typeId) => dispatch({type: 'SELECT_PARTS', typeId: typeId})
+})
+
+const TypesView = (props) => (
+  <Grid>
+    <h2>Typy części</h2>
+    <Row className="show-grid">
+      <ListGroup>
+        {
+          props.partsTypes.map(
+            typ =>
+              <Col md={4} xs={6}>
+                <ListGroupItem key={typ.id}>
+                  <Link to="">
+                    <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
+                         role="presentation" onClick={()=>props.showType(typ.id)}
+                    />
+                  </Link>
+                </ListGroupItem>
+              </Col>
+          )
+        }
+      </ListGroup>
+    </Row>
+  </Grid>
+)
+
+
+
+
+
+  export default connect(mapStateToProps, mapDispatchToProps)(TypesView)
