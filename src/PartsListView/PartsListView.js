@@ -28,9 +28,7 @@ const PartsListView = (props) => (
       }
     </h1>
       <ListGroup>
-
         {
-
           props.parts.filter(
             part => part.typeId === props.selectedType
           ).filter(
