@@ -24,7 +24,7 @@ const PartsListView = (props) => (
           type.id === props.selectedType
         ).map(
           type => type.type
-        )
+        ).toString().toLowerCase()
       }
     </h1>
       <ListGroup>
