@@ -15,12 +15,22 @@ export default [
   {
     id: 3,
     type: 'Audio',
-    image: 'audio.png'
+    image: 'audio.jpg'
   },
   {
     id: 4,
     type: 'Silnik',
-    image: 'engine.png'
+    image: 'engine.jpg'
+  },
+  {
+    id: 5,
+    type: 'Wycieraczki',
+    image: 'wycieraczki.jpg'
+  },
+  {
+    id: 6,
+    type: 'Nadwozie',
+    image: 'nadwozie.jpg'
   }
 
 ]

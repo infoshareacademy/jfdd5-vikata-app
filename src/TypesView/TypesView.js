@@ -27,6 +27,7 @@ const TypesView = (props) => (
               <Col md={4} xs={6}>
                 <ListGroupItem key={typ.id}>
                   <Link to="">
+                    <h2>{typ.type}</h2>
                     <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
                          role="presentation" onClick={()=>props.showType(typ.id)}
                     />
