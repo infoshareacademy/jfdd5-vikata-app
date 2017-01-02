@@ -4,6 +4,7 @@
 import React from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { LinkContainer } from 'react-router-bootstrap'
 import GoogleMap from 'google-map-react'
 import ShopMarker from './ShopMarker/ShopMarker'
 
@@ -11,16 +12,25 @@ const mapStateToProps = state => ({
   shops: state.appData.shops
 })
 
-const ShopsView= (props) =>(
+const ShopsView= (props) => {
+  let shopFocus = props.shops.filter(
+    shop => shop.parts.find(
+      part => part.partId === parseInt(props.params.partId)
+    ) !== undefined
+  )[0]
+
+  return (
     <div>
       <div style={{height: 300, width: '100%', marginTop:'20px'}}>
         <GoogleMap  options={{ scrollwheel: false}}
-          bootstrapURLKeys={{key: "AIzaSyBNloCLIiE_DmpryAJU16mwcr46EyQu2Fg" }}
-          defaultCenter={{
-            lat: 51.9592485,
-            lng: 19.4559833
-          }}
-          defaultZoom={8}>
+                    bootstrapURLKeys={{key: "AIzaSyBNloCLIiE_DmpryAJU16mwcr46EyQu2Fg" }}
+                    defaultCenter={{
+                      lat:props.shops.find(
+                        shop=> shop.id===shopFocus.id).location.lat,
+                      lng:props.shops.find(
+                        shop=> shop.id===shopFocus.id).location.lng
+                    }}
+                    defaultZoom={8}>
           {props.shops.map(
             shop=>(
               <ShopMarker lat={shop.location.lat}
@@ -33,39 +43,42 @@ const ShopsView= (props) =>(
       </div>
       <h3>
         {/*{*/}
-          {/*parts.filter(*/}
-            {/*part => part.id===parseInt(props.params.partId)*/}
-          {/*).map(*/}
-            {/*part => part.name*/}
-          {/*)*/}
+        {/*parts.filter(*/}
+        {/*part => part.id===parseInt(props.params.partId)*/}
+        {/*).map(*/}
+        {/*part => part.name*/}
+        {/*)*/}
         {/*} */}
         Lista hurtowni w których dostępny jest ten produkt:
       </h3>
-        <ul>
-          <ListGroup>
+      <ul>
+        <ListGroup>
 
-            {
-              props.shops.filter(
-                shop => shop.parts.find(
-                  part => part.partId === parseInt(props.params.partId)
-                ) !== undefined
-              ).map(
-                shop =>
-                  <ListGroupItem key={shop.id}>
+          {
+            props.shops.filter(
+              shop => shop.parts.find(
+                part => part.partId === parseInt(props.params.partId)
+              ) !== undefined
+            ).map(
+              shop =>
+                <ListGroupItem key={shop.id}>
+
                     {shop.name} cena:
                     {shop.parts.filter(
                       part => part.partId === parseInt(props.params.partId)
                     ).map(
                       part => part.price
                     )}
-                  </ListGroupItem>
-              )
-            }
+                    <button onClick={shopFocus=shop.id}>Focus</button>
+                </ListGroupItem>
+            )
+          }
 
-          </ListGroup>
+        </ListGroup>
 
-        </ul>
+      </ul>
     </div>
-)
+  )
+}
 
 export default connect(mapStateToProps)(ShopsView)
