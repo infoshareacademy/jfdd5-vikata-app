@@ -5,6 +5,8 @@ import React from 'react'
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
+import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
+import './PartsListView.css'
 
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
@@ -14,29 +16,26 @@ const mapStateToProps = state => ({
 })
 
 const PartsListView = (props) => (
-  <div>
-
-    <h1>Lista części typu:
-      {
-        props.partsTypes.filter(
+  <Grid>
+    <Row className="show-grid">
+      <Well>
+    <h1>Lista części typu: {
+        props.partsTypes.find(
           type =>
           type.id === props.selectedType
-        ).map(
-          type => type.type
-        )
+        ).type.toLowerCase()
       }
     </h1>
+        <Col>
       <ListGroup>
-
         {
-
           props.parts.filter(
             part => part.typeId === props.selectedType
           ).filter(
             (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) != -1
           ).map(
             (part) => (
-              <ListGroupItem key={part.id}>
+              <ListGroupItem key={part.id}  className="PartsListView-tile">
                 <h2>
                   {part.name}
                 </h2>
@@ -54,7 +53,11 @@ const PartsListView = (props) => (
           )
         }
       </ListGroup>
-  </div>
+        </Col>
+        <Clearfix/>
+      </Well>
+    </Row>
+  </Grid>
 )
 
 export default connect(mapStateToProps)(PartsListView)

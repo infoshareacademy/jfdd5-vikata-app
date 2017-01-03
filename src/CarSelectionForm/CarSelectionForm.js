@@ -4,6 +4,8 @@
 import {MenuItem, Navbar, Nav, NavDropdown, NavItem} from "react-bootstrap";
 import React from "react";
 import { connect } from 'react-redux'
+import logo from './logo.png'
+import './CarSelectionForm.css'
 
 
 
@@ -42,15 +44,16 @@ class CarSelectionForm extends React.Component {
 
     return (
       <div>
-        <Navbar>
+        <Navbar ClassName="navbar">
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">FILTRUJ CZĘŚCI:</a>
+              <img src={logo}/>
             </Navbar.Brand>
           </Navbar.Header>
-          <Nav>
-            <NavDropdown bsStyle="1"
-                         title={this.props.selectedBrand ? this.props.selectedBrand.name : 'Select brand'}
+          <Nav >
+            <NavDropdown ClassName="navbar"
+                         bsStyle="1"
+                         title={this.props.selectedBrand ? this.props.selectedBrand.name : 'Wybierz markę'}
                          key={1}
                          id={`nav-dropdown`}
                          onSelect={(eventKey) => this.props.setBrand(eventKey)}>
@@ -59,7 +62,7 @@ class CarSelectionForm extends React.Component {
 
             <NavDropdown bsStyle="1"
                          disabled={this.props.selectedBrand === null}
-                         title={this.props.selectedModel ? this.props.selectedModel.name : 'Select model'}
+                         title={this.props.selectedModel ? this.props.selectedModel.name : 'Wybierz model'}
                          key={2}
                          id={`nav-dropdown`}
                          onSelect={(eventKey) => this.props.setModel(eventKey)}>
