@@ -71,5 +71,18 @@ export default [
     name: 'Pasek wielorowkowy 5070680',
     description: ['Pasek wielorowkowy 5070680 polecany przez Hołowczyca'],
     typeId: 4
+  },
+  {
+    id: 11,
+    name: 'Przełącznik zespolony z funkcją wycieraczki',
+    description: ['Przełącznik zespolony z funkcją wycieraczki/spryskiwacza tylnej szyby,' +
+    ' czarny,do modeli z tylną wycieraczką'],
+    typeId: 5
+  },
+  {
+    id: 12,
+    name: 'Błotnik przedni lewy',
+    description: ['Błotnik przedni lewy, cynkowany, czarny'],
+    typeId: 6
   }
 ]

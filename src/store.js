@@ -4,10 +4,6 @@
 import { createStore, combineReducers } from 'redux'
 import {reducer as appReducer} from './App'
 
-
-
-
-
 const reducer = combineReducers({
   appData: appReducer
 

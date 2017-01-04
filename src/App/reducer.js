@@ -6,9 +6,10 @@ const initialState = {
   models: models,
   parts: parts,
   shops: shops,
-  types: types,
+  partsTypes: types,
   selectedBrand: null,
-  selectedModel: null
+  selectedModel: null,
+  selectedType: 1
 }
 
 export default (state = initialState, action) => {
@@ -16,13 +17,20 @@ export default (state = initialState, action) => {
     case 'SET_BRAND':
       return {
         ...state,
-        selectedBrand: state.brands.find(brand => action.brandId === brand.id)
+        selectedBrand: state.brands.find(brand => action.brandId === brand.id),
+        selectedModel: null
       }
 
       case 'SET_MODEL':
       return {
         ...state,
         selectedModel: state.models.find(model => action.modelId === model.id)
+      }
+
+    case 'SELECT_PARTS':
+      return  {
+        ...state,
+        selectedType: action.typeId
       }
 
     case 'RESET':
