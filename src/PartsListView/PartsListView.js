@@ -5,7 +5,7 @@ import React from 'react'
 import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { connect } from 'react-redux'
-import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
+import {Grid, Row, Col, Clearfix, Well, ButtonGroup} from 'react-bootstrap'
 import './PartsListView.css'
 
 const mapStateToProps = state => ({
@@ -43,13 +43,15 @@ const PartsListView = (props) => (
                   {part.name}
                 </h2>
 
-                <LinkContainer to={'/parts-list/' + part.id+""}>
-                  <Button bsStyle="info">Opis produktu</Button>
-                </LinkContainer>
+                <ButtonGroup>
+                  <LinkContainer to={'/parts-list/' + part.id+""}>
+                    <Button bsStyle="info">Opis produktu</Button>
+                  </LinkContainer>
 
-                <LinkContainer to={'/parts-list/' + part.id + "/shops"}>
-                  <Button bsStyle="info">Lista hurtowni</Button>
-                </LinkContainer>
+                  <LinkContainer to={'/parts-list/' + part.id + "/shops"}>
+                    <Button bsStyle="info">Lista hurtowni</Button>
+                  </LinkContainer>
+                </ButtonGroup>
                 {part.id === parseInt(props.params.partId) ? props.children : null}
               </ListGroupItem>
             )

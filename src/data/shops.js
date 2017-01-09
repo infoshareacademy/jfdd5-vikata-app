@@ -35,7 +35,15 @@ export default [
             {
                 partId: 6,
                 price: 600
-            }
+            },
+          {
+            partId: 11,
+            price: 22
+          },
+          {
+            partId: 12,
+            price: 54
+          }
         ]
     },
     {
@@ -70,7 +78,15 @@ export default [
             {
                 partId: 8,
                 price: 40
-            }
+            },
+          {
+            partId: 12,
+            price: 18
+          },
+          {
+            partId: 13,
+            price: 48
+          }
         ]
     },
     {
@@ -105,7 +121,15 @@ export default [
             {
                 partId: 10,
                 price: 190
-            }
+            },
+          {
+            partId: 11,
+            price: 20
+          },
+          {
+            partId: 13,
+            price: 40
+          }
         ]
     }
 ]
