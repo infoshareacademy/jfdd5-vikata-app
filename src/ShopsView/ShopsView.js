@@ -2,9 +2,8 @@
  * Created by alanw on 14.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem} from 'react-bootstrap'
+import {ListGroup, ListGroupItem, Label} from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
 import GoogleMap from 'google-map-react'
 import ShopMarker from './ShopMarker/ShopMarker'
 
@@ -18,11 +17,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const ShopsView= (props) => {
-  // let shopFocus = props.shops.filter(
-  //   shop => shop.parts.find(
-  //     part => part.partId === parseInt(props.params.partId)
-  //   ) !== undefined
-  // )[0]
+
 console.log(props)
   return (
     <div>
@@ -68,12 +63,12 @@ console.log(props)
               shop =>
                 <ListGroupItem key={shop.id} onClick={() => props.setFocus(shop.id)}>
 
-                    {shop.name} cena:
+                  {shop.name} <Label>Cena:</Label>
                     {shop.parts.filter(
                       part => part.partId === parseInt(props.params.partId)
                     ).map(
                       part => part.price
-                    )}
+                    )}zł
                 </ListGroupItem>
             )
           }
