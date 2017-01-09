@@ -9,26 +9,31 @@ import GoogleMap from 'google-map-react'
 import ShopMarker from './ShopMarker/ShopMarker'
 
 const mapStateToProps = state => ({
-  shops: state.appData.shops
+  shops: state.appData.shops,
+  focus: state.appData.focus
+})
+
+const mapDispatchToProps = dispatch => ({
+  setFocus: (focusId) => dispatch({type: 'SET_FOCUS', focus: focusId})
 })
 
 const ShopsView= (props) => {
-  let shopFocus = props.shops.filter(
-    shop => shop.parts.find(
-      part => part.partId === parseInt(props.params.partId)
-    ) !== undefined
-  )[0]
-
+  // let shopFocus = props.shops.filter(
+  //   shop => shop.parts.find(
+  //     part => part.partId === parseInt(props.params.partId)
+  //   ) !== undefined
+  // )[0]
+console.log(props)
   return (
     <div>
       <div style={{height: 300, width: '100%', marginTop:'20px'}}>
         <GoogleMap  options={{ scrollwheel: false}}
                     bootstrapURLKeys={{key: "AIzaSyBNloCLIiE_DmpryAJU16mwcr46EyQu2Fg" }}
-                    defaultCenter={{
+                    center={{
                       lat:props.shops.find(
-                        shop=> shop.id===shopFocus.id).location.lat,
+                        shop => shop.id === props.focus).location.lat,
                       lng:props.shops.find(
-                        shop=> shop.id===shopFocus.id).location.lng
+                        shop => shop.id === props.focus).location.lng
                     }}
                     defaultZoom={8}>
           {props.shops.map(
@@ -42,13 +47,13 @@ const ShopsView= (props) => {
         </GoogleMap>
       </div>
       <h3>
-        {/*{*/}
-        {/*parts.filter(*/}
-        {/*part => part.id===parseInt(props.params.partId)*/}
-        {/*).map(*/}
-        {/*part => part.name*/}
-        {/*)*/}
-        {/*} */}
+        {/*        {
+         parts.filter(
+         part => part.id===parseInt(props.params.partId)
+         ).map(
+         part => part.name
+         )
+         } */}
         Lista hurtowni w których dostępny jest ten produkt:
       </h3>
       <ul>
@@ -69,7 +74,7 @@ const ShopsView= (props) => {
                     ).map(
                       part => part.price
                     )}
-                    <button onClick={shopFocus=shop.id}>Focus</button>
+                  <button onClick={() => props.setFocus(shop.id)}>Focus{props.focus}</button>
                 </ListGroupItem>
             )
           }
@@ -81,4 +86,4 @@ const ShopsView= (props) => {
   )
 }
 
-export default connect(mapStateToProps)(ShopsView)
+export default connect(mapStateToProps, mapDispatchToProps)(ShopsView)
