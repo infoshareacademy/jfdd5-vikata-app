@@ -3,6 +3,8 @@
  */
 import React from 'react'
 import{parts} from '../data'
+import {Image} from 'react-bootstrap'
+
 
 export default (props) =>(
   <div>
@@ -18,9 +20,14 @@ export default (props) =>(
           parts.filter(
             part => part.id===parseInt(props.params.partId)
           ).map(
-            part => part.description
+            part => <div>
+              {part.description}
+              <Image src={process.env.PUBLIC_URL + '/img/img-parts/part'+part.id+'.jpg'} rounded responsive/>
+            </div>
           )
+
         }
     </h3>
+
   </div>
 )
