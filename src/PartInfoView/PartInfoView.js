@@ -7,14 +7,13 @@ import{parts} from '../data'
 export default (props) =>(
   <div>
     <h3>
-      {
-        parts.filter(
-          part => part.id===parseInt(props.params.partId)
-        ).map(
-          part => part.name
-        )
-      }
-      <p>
+      {/*{*/}
+        {/*parts.filter(*/}
+          {/*part => part.id===parseInt(props.params.partId)*/}
+        {/*).map(*/}
+          {/*part => part.name*/}
+        {/*)*/}
+      {/*}*/}
         {
           parts.filter(
             part => part.id===parseInt(props.params.partId)
@@ -22,7 +21,6 @@ export default (props) =>(
             part => part.description
           )
         }
-      </p>
     </h3>
   </div>
 )
