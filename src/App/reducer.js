@@ -9,7 +9,8 @@ const initialState = {
   partsTypes: types,
   selectedBrand: null,
   selectedModel: null,
-  selectedType: 1
+  selectedType: 1,
+  focus: 1
 }
 
 export default (state = initialState, action) => {
@@ -33,10 +34,14 @@ export default (state = initialState, action) => {
         selectedType: action.typeId
       }
 
+    case 'SET_FOCUS':
+      return{
+        ...state,
+        focus: action.focus
+      }
+
     case 'RESET':
-
       return initialState
-
 
     default:
       return state

@@ -7,6 +7,10 @@ export default [
         id: 1,
         name: 'Auto części u Mietka',
         address: 'Gdańsk Morska 123',
+      location: {
+        lat:54.3520252,
+        lng:18.6466384
+      },
         parts:[
             {
                 partId: 1,
@@ -38,6 +42,10 @@ export default [
         id: 2,
         name: 'Marjush i chłopaki',
         address: 'Warszawa Kolorowa 69',
+      location: {
+        lat:52.2296756,
+        lng:21.0122287
+      },
         parts:[
             {
                 partId: 3,
@@ -69,6 +77,10 @@ export default [
         id: 3,
         name: 'Może nie najtaniej ale jako tako',
         address: 'Sosnowiec Piekielna 666',
+      location: {
+        lat:50.2862638,
+        lng:19.1040791
+      },
         parts:[
             {
                 partId: 5,
