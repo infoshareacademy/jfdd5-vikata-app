@@ -66,7 +66,7 @@ console.log(props)
               ) !== undefined
             ).map(
               shop =>
-                <ListGroupItem key={shop.id}>
+                <ListGroupItem key={shop.id} onClick={() => props.setFocus(shop.id)}>
 
                     {shop.name} cena:
                     {shop.parts.filter(
@@ -74,7 +74,6 @@ console.log(props)
                     ).map(
                       part => part.price
                     )}
-                  <button onClick={() => props.setFocus(shop.id)}>Focus{props.focus}</button>
                 </ListGroupItem>
             )
           }
