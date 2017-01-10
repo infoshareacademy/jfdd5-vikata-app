@@ -28,7 +28,7 @@ export default [
     typeId: 1,
     name: 'Goodyear Wrangler Duratrac',
     description: ['Całoroczna, szerokość 235, rozmiar 15'],
-    image: 'part06.jpg'
+    image: 'part04.jpg'
   },
   {
     id: 5,
