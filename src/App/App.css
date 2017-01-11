@@ -1,8 +1,7 @@
 .pageHeader {
   width:100%;
-  height:100%;
-  height:calc(100% - 1px);
-  background-image:url('https://c.stocksy.com/a/RcN300/z0/805779.jpg');
+  height:130px;
+  background-image:url('../../public/img/img-header/vikata-app-baner.jpg');
   background-size:cover;
 }
 
