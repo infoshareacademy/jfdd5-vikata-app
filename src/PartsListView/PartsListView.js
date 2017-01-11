@@ -2,10 +2,8 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem, Button} from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image} from 'react-bootstrap'
 import { connect } from 'react-redux'
-import {Grid, Row, Col, Clearfix, Well, ButtonGroup} from 'react-bootstrap'
 import './PartsListView.css'
 
 const mapStateToProps = state => ({
@@ -14,9 +12,6 @@ const mapStateToProps = state => ({
   selectedType: state.appData.selectedType,
   selectedModel: state.appData.selectedModel
 })
-
-
-
 
 const PartsListView = (props) => (
   <Grid>
@@ -39,11 +34,23 @@ const PartsListView = (props) => (
           ).map(
             (part) => (
               <ListGroupItem key={part.id}  className="PartsListView-tile">
-                <h2>
-                  {part.name}
-                </h2>
+                <Grid>
+                  <Row className="show-grid">
+                    <Col md={4}>
+                      <Image src={process.env.PUBLIC_URL + '/img/img-parts/' + part.image} rounded responsive/>
+                    </Col>
+                    <Col md={6}>
+                      <h2>
+                        {part.name}
+                      </h2>
+                      <p>
+                        {part.description}
+                      </p>
+                    </Col>
+                  </Row>
+                </Grid>
 
-                <ButtonGroup>
+                {/*                <ButtonGroup>
                   <LinkContainer to={'/parts-list/' + part.id+""}>
                     <Button bsStyle="info">Opis produktu</Button>
                   </LinkContainer>
@@ -52,7 +59,8 @@ const PartsListView = (props) => (
                     <Button bsStyle="info">Lista hurtowni</Button>
                   </LinkContainer>
                 </ButtonGroup>
-                {part.id === parseInt(props.params.partId) ? props.children : null}
+                 {part.id === parseInt(props.params.partId) ? props.children : null}*/}
+
               </ListGroupItem>
             )
           )
