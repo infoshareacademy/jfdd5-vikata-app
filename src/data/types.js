@@ -5,12 +5,12 @@ export default [
   {
     id: 1,
     type: 'Uzbrojenie',
-    image: 'tyre.png'
+    image: 'uzbrojenie.jpg'
   },
   {
     id: 2,
     type: 'Napęd',
-    image: 'bulbs.jpg'
+    image: 'naped.jpg'
   },
   {
     id: 3,
@@ -20,12 +20,12 @@ export default [
   {
     id: 4,
     type: 'Luksus',
-    image: 'engine.jpg'
+    image: 'luxury.jpg'
   },
   {
     id: 5,
     type: 'Gadżety',
-    image: 'wycieraczki.jpg'
+    image: 'gadget.jpg'
   },
   {
     id: 6,
