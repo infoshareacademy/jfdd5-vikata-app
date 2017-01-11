@@ -6,9 +6,8 @@ import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css';
 import { App } from './App'
 
-import { ShopsView } from './ShopsView'
+
 import { PartsListView } from './PartsListView'
-import { PartInfoView } from './PartInfoView'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
@@ -23,8 +22,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={PartsListView}/>
       <Route path="/parts-list" component={PartsListView}>
-        <Route path="/parts-list/:partId" component={PartInfoView}/>
-        <Route path="/parts-list/:partId/shops" component={ShopsView} />
+
       </Route>
     </Route>
   {/*<Route path="*" component={NotFoundView} />*/}
