@@ -65,5 +65,61 @@ export default [
     description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
     price: 120,
     image: 'part08.jpg'
+  },
+  {
+    id: 9,
+    typeId: 1,
+    name: 'Działo Jonowe "Miotacz 2000"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part09.jpg'
+  },
+  {
+    id: 10,
+    typeId: 2,
+    name: 'Klakson-miś',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part10.jpg'
+  },
+  {
+    id: 11,
+    typeId: 2,
+    name: 'Fotel z toaletą',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part11.jpg'
+  },
+  {
+    id: 12,
+    typeId: 1,
+    name: 'Napęd rakietowy "Turbo wystrzał"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part12.jpg'
+  },
+  {
+    id: 13,
+    typeId: 1,
+    name: 'Dębica Navigator',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part13.jpg'
+  },
+  {
+    id: 14,
+    typeId: 3,
+    name: 'Radio Pioneer MVH-180UB',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part14.jpg'
+  },
+  {
+    id: 15,
+    typeId: 3,
+    name: 'Sony MEX-N5100BT',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part15.jpg'
   }
 ]

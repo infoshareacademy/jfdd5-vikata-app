@@ -17,24 +17,11 @@ export default [
       },
 
       partsToSell: [
-            {
-              partId: 1
-            },
-            {
-              partId: 2
-            },
-            {
-              partId: 3
-            }
+        1, 2, 3
       ],
 
       partsWanted: [
-        {
-          partId: 1
-        },
-        {
-          partId: 2
-        }
+        4, 5
       ]
     },
   {
@@ -51,21 +38,11 @@ export default [
     },
 
     partsToSell: [
-      {
-        partId: 4
-      },
-      {
-        partId: 5
-      },
-      {
-        partId: 6
-      }
+      6, 7, 8
     ],
 
     partsWanted: [
-      {
-        partId: 3
-      }
+      9
     ]
   },
   {
@@ -82,27 +59,11 @@ export default [
     },
 
     partsToSell: [
-      {
-        partId: 7
-      },
-      {
-        partId: 8
-      }
+      10
     ],
 
     partsWanted: [
-      {
-        partId: 4
-      },
-      {
-        partId: 5
-      },
-      {
-        partId: 6
-      },
-      {
-        partId: 7
-      }
+      11, 12, 13, 14
     ]
   },
 ]
