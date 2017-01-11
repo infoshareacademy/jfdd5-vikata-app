@@ -5,96 +5,121 @@ export default [
   {
     id: 1,
     typeId: 1,
-    name: 'Michelin CrossClimate',
-    description: ['Całoroczna, szerokość 205, rozmiar 16'],
+    name: 'Działo Jonowe "Miotacz 2000"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part01.jpg'
   },
   {
     id: 2,
     typeId: 2,
-    name: 'Zarówka LED',
-    description: ['Wymiary: 156 x 18 x 42mm,Barwa światła: 5000K'],
+    name: 'Klakson-miś',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part02.jpg'
   },
   {
     id: 3,
     typeId: 2,
-    name: 'Reflektor główny lewy',
-    description: ['Przedni lewy główny reflektor z żarówką HB1 9004'],
+    name: 'Fotel z toaletą',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part03.jpg'
   },
   {
     id: 4,
     typeId: 1,
-    name: 'Goodyear Wrangler Duratrac',
-    description: ['Całoroczna, szerokość 235, rozmiar 15'],
+    name: 'Napęd rakietowy "Turbo wystrzał"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part04.jpg'
   },
   {
     id: 5,
     typeId: 1,
     name: 'Dębica Navigator',
-    description: ['Zimowa, szerokość 195, rozmiar 16'],
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part05.jpg'
   },
   {
     id: 6,
     typeId: 3,
     name: 'Radio Pioneer MVH-180UB',
-    description: ['Uzyskaj 4 x 50W czystej mocy i doskonałą reprodukcję dźwięku.' +
-    ' Gniazdo USB pozwala na podłączenie przenośnej pamięci,' +
-    ' a port AUX-in umożliwia podłączenie dowolnego urządzenia audio.' +
-    ' MVH-180UB oferuje wsparcie dla audiofilskiego formatu bezstratnych plików FLAC,' +
-    ' które zapewniają słuchanie muzyki w najwyższej jakości'],
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part06.jpg'
   },
   {
     id: 7,
     typeId: 3,
     name: 'Sony MEX-N5100BT',
-    description: ['Radioodtwarzacz MEX-N5100BT odczyta na głos odebrane maile' +
-    ' i pozwoli głosowo zredagować odpowiedzi. Nie odrywasz więc wzroku od drogi,' +
-    ' a i tak wiesz, co się dzieje. Nowy, dwustrefowy system Dynamic Colour Illuminator' +
-    ' pozwala na wyświetlenie maksymalnie 35 000 kolorów zmieniających się w rytm muzyki.'],
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part07.jpg'
   },
   {
     id: 8,
     typeId: 4,
     name: 'Sprzęgło jednokierunkowe alternatora Dodge Nitro CRD',
-    description: ['Jednokierunkowe sprzęgiełko alternatora służy w silniku spalinowym' +
-    ' do odłączania alternatora od wału korbowego, który cechuje się nieregularnym ruchem obrotowym,' +
-    ' ponieważ alternator ma najwyższy moment bezwładności w pomocniczym układzie napędu pasowego.' +
-    ' Dlatego też alternator jest napędzany wyłącznie składową przyspieszenia ruchu obrotowego wału korbowego.'],
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part08.jpg'
   },
   {
     id: 9,
-    typeId: 3,
-    name: 'Hertz DCX 165.3',
-    description: ['głośniki 2-drożne 120W'],
+    typeId: 1,
+    name: 'Działo Jonowe "Miotacz 2000"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part09.jpg'
   },
   {
     id: 10,
-    typeId: 4,
-    name: 'Pasek wielorowkowy 5070680',
-    description: ['Pasek wielorowkowy 5070680 polecany przez Hołowczyca'],
+    typeId: 2,
+    name: 'Klakson-miś',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part10.jpg'
   },
   {
     id: 11,
-    typeId: 5,
-    name: 'Przełącznik zespolony z funkcją wycieraczki',
-    description: ['Przełącznik zespolony z funkcją wycieraczki/spryskiwacza tylnej szyby,' +
-    ' czarny,do modeli z tylną wycieraczką'],
+    typeId: 2,
+    name: 'Fotel z toaletą',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part11.jpg'
   },
   {
     id: 12,
-    typeId: 6,
-    name: 'Błotnik przedni lewy',
-    description: ['Błotnik przedni lewy, cynkowany, czarny'],
+    typeId: 1,
+    name: 'Napęd rakietowy "Turbo wystrzał"',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
     image: 'part12.jpg'
+  },
+  {
+    id: 13,
+    typeId: 1,
+    name: 'Dębica Navigator',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part13.jpg'
+  },
+  {
+    id: 14,
+    typeId: 3,
+    name: 'Radio Pioneer MVH-180UB',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part14.jpg'
+  },
+  {
+    id: 15,
+    typeId: 3,
+    name: 'Sony MEX-N5100BT',
+    description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
+    price: 120,
+    image: 'part15.jpg'
   }
 ]
