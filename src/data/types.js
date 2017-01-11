@@ -4,12 +4,12 @@
 export default [
   {
     id: 1,
-    type: 'Opony',
+    type: 'Uzbrojenie',
     image: 'tyre.png'
   },
   {
     id: 2,
-    type: 'Żarówki',
+    type: 'Napęd',
     image: 'bulbs.jpg'
   },
   {
@@ -19,17 +19,17 @@ export default [
   },
   {
     id: 4,
-    type: 'Silnik',
+    type: 'Luksus',
     image: 'engine.jpg'
   },
   {
     id: 5,
-    type: 'Wycieraczki',
+    type: 'Gadżety',
     image: 'wycieraczki.jpg'
   },
   {
     id: 6,
-    type: 'Nadwozie',
+    type: 'Inne',
     image: 'nadwozie.jpg'
   }
 ]
