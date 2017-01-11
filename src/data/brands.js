@@ -5,17 +5,17 @@
 export default [
   {
     id: 1,
-    name: 'Opel',
+    name: 'Jeżdżące',
     modelsIds: [1, 2, 3]
   },
   {
     id: 2,
-    name: 'Ford',
+    name: 'Latające',
     modelsIds: [4, 5, 6]
   },
   {
     id: 3,
-    name: 'Fiat',
+    name: 'Pływające',
     modelsIds: [7, 8, 9]
   }
 ]
