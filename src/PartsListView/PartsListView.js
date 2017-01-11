@@ -15,11 +15,14 @@ const mapStateToProps = state => ({
   selectedModel: state.appData.selectedModel
 })
 
+
+
+
 const PartsListView = (props) => (
   <Grid>
     <Row className="show-grid">
       <Well>
-    <h1>Lista części typu: {
+        <h1>Lista części typu: {
         props.partsTypes.find(
           type =>
           type.id === props.selectedType
