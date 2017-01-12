@@ -4,8 +4,6 @@
 import React from 'react'
 import {Modal, Button, ListGroup, ListGroupItem} from 'react-bootstrap'
 
-
-
 export default React.createClass({
 
   getInitialState() {
@@ -21,10 +19,7 @@ export default React.createClass({
   },
 
 
-
   render() {
-    console.debug(this.props)
-
     return (
       <div>
 

@@ -49,10 +49,6 @@ const PartsListView = (props) => (
                 user => user.partsToSell.indexOf(part.id) !== -1
               )
 
-
-
-              console.debug(userWhoSells, userWhoWants)
-
               return (
                 <ListGroupItem key={part.id}  className="PartsListView-tile">
                   <Grid>
