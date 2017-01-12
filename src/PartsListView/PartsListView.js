@@ -2,9 +2,10 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label} from 'react-bootstrap'
+import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label, Button, Modal} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import './PartsListView.css'
+import ContactModal from './contactModal/ContactModal'
 
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
@@ -57,9 +58,14 @@ const PartsListView = (props) => (
                       </Col>
                       <Col md={2}>
                         {
-                          isWanted === true ? <div><h2><Label bsStyle="success">Na sprzedaż</Label></h2><h2><Label bsStyle="info">Cena: {part.price}</Label></h2></div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
+                          isWanted === true ?
+                            <div>
+                              <h2><Label bsStyle="success">Na sprzedaż</Label></h2>
+                              <h3><Label bsStyle="info">Cena: {part.price}</Label></h3>
+                            </div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
                         }
 
+                        <ContactModal/>
                       </Col>
                     </Row>
                   </Grid>
