@@ -2,9 +2,12 @@
  * Created by alanw on 12.01.2017.
  */
 import React from 'react'
-import {Modal, Button} from 'react-bootstrap'
+import {Modal, Button, ListGroup, ListGroupItem} from 'react-bootstrap'
+
+
 
 export default React.createClass({
+
   getInitialState() {
     return { showModal: false };
   },
@@ -16,6 +19,8 @@ export default React.createClass({
   open() {
     this.setState({ showModal: true });
   },
+
+
 
   render() {
     console.debug(this.props)
@@ -33,13 +38,20 @@ export default React.createClass({
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Informacje kontaktowe użytkownika: {this.props.user ? this.props.user.address : 'blah'}</Modal.Title>
+            <Modal.Title>Informacje kontaktowe użytkownika {this.props.user.name+' '+this.props.user.surname}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h2>Imię:</h2>
-            <h2>Adres:</h2>
-            <h2>E-mail:</h2>
-            <h2>Telefon:</h2>
+            <ListGroup>
+              <ListGroupItem>
+            <h3>Adres:</h3><h4>{this.props.user.address !== undefined ? this.props.user.address : 'Nie podano'}</h4>
+              </ListGroupItem>
+              <ListGroupItem>
+            <h3>E-mail:</h3><h4>{this.props.user.email !== undefined ? this.props.user.email : 'Nie podano'}</h4>
+              </ListGroupItem>
+              <ListGroupItem>
+            <h3>Telefon:</h3><h4>{this.props.user.phone !== undefined ? this.props.user.phone : 'Nie podano'}</h4>
+              </ListGroupItem>
+            </ListGroup>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Zamknij</Button>

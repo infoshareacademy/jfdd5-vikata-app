@@ -35,7 +35,7 @@ const PartsListView = (props) => (
             (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) !== -1
           ).map(
             (part) => {
-              const isWanted = props.users.map(
+              const isToSell = props.users.map(
                 user => user.partsToSell.indexOf(part.id) !== -1
               ).some(
                 hasPart => hasPart === true
@@ -70,14 +70,14 @@ const PartsListView = (props) => (
                       </Col>
                       <Col md={2}>
                         {
-                          isWanted === true ?
+                          isToSell === true ?
                             <div>
                               <h2><Label bsStyle="success">Na sprzedaż</Label></h2>
                               <h3><Label bsStyle="info">Cena: {part.price}</Label></h3>
                             </div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
                         }
 
-                        <ContactModal blah={222222} user={isWanted === true ? userWhoSells : userWhoWants}/>
+                        <ContactModal user={isToSell === true ? userWhoSells : userWhoWants}/>
                       </Col>
                     </Row>
                   </Grid>
