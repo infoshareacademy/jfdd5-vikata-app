@@ -1,14 +1,8 @@
 import React from 'react'
-import { connect} from 'react-redux'
 import { PageHeader } from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
-
-
-const mapStateToProps = (state) => ({
-
-})
 
 class App extends React.Component {
   render() {
@@ -18,11 +12,9 @@ class App extends React.Component {
         <CarSelectionForm/>
         <TypesView/>
           {this.props.children}
-
       </div>
     );
   }
 }
 
-
-export default connect(mapStateToProps)(App);
+export default App;
