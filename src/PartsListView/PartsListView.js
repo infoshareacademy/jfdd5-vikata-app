@@ -41,6 +41,18 @@ const PartsListView = (props) => (
                 hasPart => hasPart === true
               )
 
+              const userWhoWants = props.users.find(
+                user => user.partsWanted.indexOf(part.id) !== -1
+              )
+
+              const userWhoSells = props.users.find(
+                user => user.partsToSell.indexOf(part.id) !== -1
+              )
+
+
+
+              console.debug(userWhoSells, userWhoWants)
+
               return (
                 <ListGroupItem key={part.id}  className="PartsListView-tile">
                   <Grid>
@@ -65,7 +77,7 @@ const PartsListView = (props) => (
                             </div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
                         }
 
-                        <ContactModal/>
+                        <ContactModal blah={222222} user={isWanted === true ? userWhoSells : userWhoWants}/>
                       </Col>
                     </Row>
                   </Grid>

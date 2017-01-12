@@ -18,6 +18,7 @@ export default React.createClass({
   },
 
   render() {
+    console.debug(this.props)
 
     return (
       <div>
@@ -32,7 +33,7 @@ export default React.createClass({
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Informacje kontaktowe użytkownika</Modal.Title>
+            <Modal.Title>Informacje kontaktowe użytkownika: {this.props.user ? this.props.user.address : 'blah'}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h2>Imię:</h2>
@@ -41,7 +42,7 @@ export default React.createClass({
             <h2>Telefon:</h2>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
+            <Button onClick={this.close}>Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>
