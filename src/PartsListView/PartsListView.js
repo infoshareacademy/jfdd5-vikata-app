@@ -2,13 +2,14 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image} from 'react-bootstrap'
+import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import './PartsListView.css'
 
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   parts: state.appData.parts,
+  users: state.appData.users,
   selectedType: state.appData.selectedType,
   selectedModel: state.appData.selectedModel
 })
@@ -30,7 +31,7 @@ const PartsListView = (props) => (
           props.parts.filter(
             part => part.typeId === props.selectedType
           ).filter(
-            (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) != -1
+            (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) !== -1
           ).map(
             (part) => (
               <ListGroupItem key={part.id}  className="PartsListView-tile">
@@ -39,13 +40,24 @@ const PartsListView = (props) => (
                     <Col md={4}>
                       <Image src={process.env.PUBLIC_URL + '/img/img-parts/' + part.image} rounded responsive/>
                     </Col>
-                    <Col md={6}>
+                    <Col md={5}>
                       <h2>
                         {part.name}
                       </h2>
                       <p>
                         {part.description}
                       </p>
+                    </Col>
+                    <Col md={2}>
+                      <h2><Label bsStyle="info">Cena: {part.price}</Label></h2>
+                      {
+                        props.users.map(
+                          user => user.partsToSell.indexOf(part.id) !== -1
+                        ).some(
+                          hasPart => hasPart === true
+                        ) === true ? <h2><Label bsStyle="success">Na sprzedaż</Label></h2> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
+                      }
+
                     </Col>
                   </Row>
                 </Grid>
