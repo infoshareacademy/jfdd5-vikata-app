@@ -5,3 +5,13 @@
   background-size:cover;
 }
 
+@media screen and (min-width:801px) and (max-width:1200px) {
+  .pageHeader {
+    height:130px;
+  }
+}
+@media screen and (min-width:1201px) {
+  .pageHeader {
+    height:130px;
+  }
+}
