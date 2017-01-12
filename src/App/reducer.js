@@ -1,11 +1,11 @@
-import {brands, models, parts, shops, types} from "../data";
+import {brands, models, parts, users, types} from "../data";
 
 
 const initialState = {
   brands: brands,
   models: models,
   parts: parts,
-  shops: shops,
+  users: users,
   partsTypes: types,
   selectedBrand: null,
   selectedModel: null,

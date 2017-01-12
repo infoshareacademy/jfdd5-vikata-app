@@ -10,6 +10,8 @@ export default [
       address: 'Gdańsk Morska 123',
       login:'januszek',
       password:'qweasd',
+      email:'superjanusz@gmail.com',
+      phone:'598321243',
 
       location: {
         lat:54.3520252,
@@ -31,6 +33,8 @@ export default [
     address: 'Warszawa Kolorowa 69',
     login:'endrju',
     password:'zupa1',
+    email:undefined,
+    phone:'765125498',
 
     location: {
       lat:52.2296756,
@@ -52,6 +56,8 @@ export default [
     address: 'Sosnowiec Piekielna 666',
     login:'troll',
     password:'123456',
+    email:'bestwarlock@gmail.com',
+    phone:undefined,
 
     location: {
       lat: 50.2862638,
