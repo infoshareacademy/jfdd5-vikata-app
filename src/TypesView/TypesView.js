@@ -37,7 +37,7 @@ const TypesView = (props) => (
                                      'TypesView-selected-type' : ''
                                  }>
                     <h2>{typ.type}</h2>
-                    <img src={process.env.PUBLIC_URL + '/img/' + typ.image}
+                    <img src={process.env.PUBLIC_URL + '/img/img-types/' + typ.image}
                          role="presentation"
                     />
                   </ListGroupItem>

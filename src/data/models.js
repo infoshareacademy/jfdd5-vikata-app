@@ -5,49 +5,49 @@
 export default [
   {
     id: 1,
-    name: 'Astra',
+    name: 'samochód',
     partsIds: [1, 2, 3]
   },
   {
     id: 2,
-    name: 'Corsa',
+    name: 'motocykl',
     partsIds: [4, 5, 6]
   },
   {
     id: 3,
-    name: 'Vectra',
+    name: 'inne',
     partsIds: [7, 8, 9]
   },
 
   {
     id: 4,
-    name: 'Mondeo',
+    name: 'helikopter',
     partsIds: [10, 1, 2]
   },
   {
     id: 5,
-    name: 'Galaxy',
+    name: 'samolot',
     partsIds: [3, 4, 5]
   },
   {
     id: 6,
-    name: 'Mustang',
+    name: 'inne',
     partsIds: [7, 8, 9]
   },
 
   {
     id: 7,
-    name: 'Punto',
+    name: 'motorówka',
     partsIds: [1, 2, 3]
   },
   {
     id: 8,
-    name: 'Panda',
+    name: 'yacht',
     partsIds: [4, 5, 6]
   },
   {
     id: 9,
-    name: '500',
+    name: 'inne',
     partsIds: [7, 8, 9]
   }
 
