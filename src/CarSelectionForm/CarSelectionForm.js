@@ -44,14 +44,14 @@ class CarSelectionForm extends React.Component {
 
     return (
       <div>
-        <Navbar ClassName="navbar">
+        <Navbar className="navbar">
           <Navbar.Header>
             <Navbar.Brand>
               <img src={logo}/>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav >
-            <NavDropdown ClassName="navbar"
+            <NavDropdown className="navbar"
                          bsStyle="1"
                          title={this.props.selectedBrand ? this.props.selectedBrand.name : 'Wybierz markę'}
                          key={1}
