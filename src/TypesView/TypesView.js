@@ -19,16 +19,12 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const TypesView = (props) => (
-  <Grid>
-    <h2>Typy części</h2>
-    <Row className="show-grid">
       <ListGroup>
         <Well>
           {
             props.partsTypes.map(
               typ =>
                 <Col md={4}
-                     xs={6}
                      onClick={() => props.showType(typ.id)}
                      className="TypesView-tile">
                   <ListGroupItem key={typ.id}
@@ -47,8 +43,6 @@ const TypesView = (props) => (
           <Clearfix/>
         </Well>
       </ListGroup>
-    </Row>
-  </Grid>
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(TypesView)

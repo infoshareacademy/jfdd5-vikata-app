@@ -16,9 +16,7 @@ const mapStateToProps = state => ({
 })
 
 const PartsListView = (props) => (
-  <Grid>
-    <Row className="show-grid">
-      <Well>
+  <Well>
         <h1>Lista części typu: {
         props.partsTypes.find(
           type =>
@@ -26,7 +24,7 @@ const PartsListView = (props) => (
         ).type.toLowerCase()
       }
     </h1>
-        <Col>
+
       <ListGroup>
         {
           props.parts.filter(
@@ -53,10 +51,10 @@ const PartsListView = (props) => (
                 <ListGroupItem key={part.id}  className="PartsListView-tile">
                   <Grid>
                     <Row className="show-grid">
-                      <Col md={4}>
+                      <Col md={2}>
                         <Image src={process.env.PUBLIC_URL + '/img/img-parts/' + part.image} rounded responsive/>
                       </Col>
-                      <Col md={5}>
+                      <Col md={6}>
                         <h2>
                           {part.name}
                         </h2>
@@ -64,7 +62,7 @@ const PartsListView = (props) => (
                           {part.description}
                         </p>
                       </Col>
-                      <Col md={2}>
+                      <Col md={4}>
                         {
                           isToSell === true ?
                             <div>
@@ -95,11 +93,7 @@ const PartsListView = (props) => (
           )
         }
       </ListGroup>
-        </Col>
-        <Clearfix/>
-      </Well>
-    </Row>
-  </Grid>
+  </Well>
 )
 
 export default connect(mapStateToProps)(PartsListView)
