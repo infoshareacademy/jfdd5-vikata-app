@@ -69,7 +69,7 @@ export default [
     ],
 
     partsWanted: [
-      11, 12, 13, 14
+      11, 12, 13, 14,15
     ]
   },
 ]
