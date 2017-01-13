@@ -31,6 +31,11 @@ const logForm = (
       id="formControlsPassword"
       label="Hasło"
       type="password"
+      onChange={
+        event => this.setState({
+          login: event.target.value
+        })
+      }
     />
     <Button type="submit">
       Zaloguj
