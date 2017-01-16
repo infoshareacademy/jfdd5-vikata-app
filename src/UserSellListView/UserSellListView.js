@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import {connect} from 'react-redux'
-import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col} from 'react-bootstrap'
+import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col, Accordion, Panel} from 'react-bootstrap'
 
 const mapStateToProps = state => ({
   parts: state.appData.parts,
@@ -14,24 +14,24 @@ const mapStateToProps = state => ({
 const UserSellLIstView = (props) => (
   <Well>
     <h3>Twoje rzeczy na sprzedaż</h3>
-    <ListGroup>
+    <Accordion>
       {
         props.users.filter(
           user => user.id === props.loggedUser
         ).map(
-          user =>
-            <div>
-              {
+          user => (
                 props.parts.filter(
                   part => user.partsToSell.indexOf(part.id) !== -1
                 ).map(
-                  part => <ListGroupItem>{part.name}</ListGroupItem>
+                  part =>
+                    <Panel header={part.name} bsStyle="primary" eventKey={part.id}>
+                      tralala
+                    </Panel>
                 )
-              }
-            </div>
+          )
         )
       }
-    </ListGroup>
+    </Accordion>
   </Well>
 
 )
