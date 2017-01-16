@@ -3,7 +3,6 @@ import {PageHeader, Row, Col, Grid, Clearfix} from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
 import {TypesView} from '../TypesView'
-import {LoginPanelView} from '../LoginPanelView'
 import {LogForm} from '../LoginPanelView'
 
 class App extends React.Component {
@@ -16,11 +15,8 @@ class App extends React.Component {
         <LogForm/>
         <Grid>
           <Row className="show-grid">
-            <Col md={9}>
+            <Col>
               <CarSelectionForm/>
-            </Col>
-            <Col md={3}>
-              {/*<LoginPanelView/>*/}
             </Col>
             <Clearfix/>
             <Col>
