@@ -52,6 +52,8 @@ class LoginPanelView extends React.Component {
     })
   }
 
+
+
   render() {
     let close = () => this.setState({ show: false});
 
