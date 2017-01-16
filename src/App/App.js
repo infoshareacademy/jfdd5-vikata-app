@@ -1,27 +1,33 @@
 import React from 'react'
-import { connect} from 'react-redux'
-import { PageHeader, Image } from 'react-bootstrap'
+import {PageHeader, Row, Col, Grid, Clearfix} from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
-import { TypesView } from '../TypesView'
-
-
-const mapStateToProps = (state) => ({
-
-})
+import {TypesView} from '../TypesView'
+import {LogForm} from '../LoginPanelView'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <CarSelectionForm/>
-        <TypesView/>
-          {this.props.children}
-
+        <PageHeader bsClass="pageHeader">Autonaprawiatch v.2.0
+          <small>Nietypowe pojazdy</small>
+        </PageHeader>
+        <LogForm/>
+        <Grid>
+          <Row className="show-grid">
+            <Col>
+              <CarSelectionForm/>
+            </Col>
+            <Clearfix/>
+            <Col>
+            <TypesView/>
+            {this.props.children}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
 
-
-export default connect(mapStateToProps)(App);
+export default App;

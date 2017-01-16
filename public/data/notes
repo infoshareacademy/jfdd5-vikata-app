@@ -1,0 +1,3 @@
+Change from js to json:
+([a-z]+):      to:
+"$1":
