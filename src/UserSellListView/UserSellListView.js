@@ -4,6 +4,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col, Accordion, Panel} from 'react-bootstrap'
+import PartToSellView from './PartToSellView/PartToSellView'
 
 const mapStateToProps = state => ({
   parts: state.appData.parts,
@@ -25,7 +26,7 @@ const UserSellLIstView = (props) => (
                 ).map(
                   part =>
                     <Panel header={part.name} bsStyle="primary" eventKey={part.id}>
-                      tralala
+                      <PartToSellView part={part}/>
                     </Panel>
                 )
           )
