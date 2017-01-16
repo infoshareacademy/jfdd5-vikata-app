@@ -5,6 +5,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col, Accordion, Panel} from 'react-bootstrap'
 import PartToSellView from './PartToSellView/PartToSellView'
+import AddToSellModal from './addToSellModal/AddToSellModal'
 
 const mapStateToProps = state => ({
   parts: state.appData.parts,
@@ -33,6 +34,7 @@ const UserSellLIstView = (props) => (
         )
       }
     </Accordion>
+    <AddToSellModal/>
   </Well>
 
 )

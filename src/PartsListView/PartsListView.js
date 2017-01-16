@@ -2,7 +2,7 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label, Button, Modal} from 'react-bootstrap'
+import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label, Button, Modal, Navbar} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import './PartsListView.css'
 import ContactModal from './contactModal/ContactModal'
@@ -48,7 +48,7 @@ const PartsListView = (props) => (
               )
 
               return (
-                <ListGroupItem key={part.id}  className="PartsListView-tile">
+                <ListGroupItem key={part.id}  className="PartsListView-tile" >
                   <Grid>
                     <Row className="show-grid">
                       <Col md={2}>
@@ -93,6 +93,7 @@ const PartsListView = (props) => (
           )
         }
       </ListGroup>
+
   </Well>
 )
 
