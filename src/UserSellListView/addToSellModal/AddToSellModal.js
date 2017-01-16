@@ -25,8 +25,9 @@ export default React.createClass({
         <Button
           bsStyle="success"
           onClick={this.open}
+          block
         ><Glyphicon glyph="plus"/>{' '}
-          Dodaj przedmiot na sprzedaż
+          Dodaj przedmiot
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>

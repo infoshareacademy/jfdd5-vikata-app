@@ -4,6 +4,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col, Accordion, Panel} from 'react-bootstrap'
+import {AutoAffix} from 'react-overlays'
 import PartToSellView from './PartToSellView/PartToSellView'
 import AddToSellModal from './addToSellModal/AddToSellModal'
 
@@ -14,7 +15,8 @@ const mapStateToProps = state => ({
 })
 
 const UserSellLIstView = (props) => (
-  <Well>
+  <AutoAffix>
+  <Well style={{overflowY:'auto'}}>
     <h3>Twoje rzeczy na sprzedaż</h3>
     <Accordion>
       {
@@ -36,7 +38,7 @@ const UserSellLIstView = (props) => (
     </Accordion>
     <AddToSellModal/>
   </Well>
-
+  </AutoAffix>
 )
 
 export default connect(mapStateToProps)(UserSellLIstView)
