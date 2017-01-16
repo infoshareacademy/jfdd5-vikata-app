@@ -7,7 +7,6 @@ import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../UserWantedListView'
 import { UserSellListView} from '../UserSellListView'
 
-
 const mapStateToProps = (state) => ({
 
 })
