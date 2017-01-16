@@ -25,7 +25,6 @@ export default React.createClass({
 
         <Button
           bsStyle="primary"
-          bsSize="large"
           onClick={this.open}
         >
           Informacje kontaktowe

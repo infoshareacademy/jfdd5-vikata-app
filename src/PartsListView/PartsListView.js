@@ -49,12 +49,12 @@ const PartsListView = (props) => (
 
               return (
                 <ListGroupItem key={part.id}  className="PartsListView-tile" >
-                  <Grid>
-                    <Row className="show-grid">
+
+                    <Row>
                       <Col md={2}>
                         <Image src={process.env.PUBLIC_URL + '/img/img-parts/' + part.image} rounded responsive/>
                       </Col>
-                      <Col md={6}>
+                      <Col md={7}>
                         <h2>
                           {part.name}
                         </h2>
@@ -62,19 +62,18 @@ const PartsListView = (props) => (
                           {part.description}
                         </p>
                       </Col>
-                      <Col md={4}>
+                      <Col md={3}>
                         {
                           isToSell === true ?
                             <div>
-                              <h2><Label bsStyle="success">Na sprzedaż</Label></h2>
-                              <h3><Label bsStyle="info">Cena: {part.price}</Label></h3>
-                            </div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
+                              <h3><Label bsStyle="success">Na sprzedaż</Label></h3>
+                              <h4><Label bsStyle="info">Cena: {part.price}</Label></h4>
+                            </div> : <h3><Label bsStyle="warning">Poszukiwane</Label></h3>
                         }
 
                         <ContactModal user={isToSell === true ? userWhoSells : userWhoWants}/>
                       </Col>
                     </Row>
-                  </Grid>
 
                   {/*                <ButtonGroup>
                    <LinkContainer to={'/parts-list/' + part.id+""}>
