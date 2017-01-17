@@ -14,8 +14,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   inlogged: (user) => dispatch(inlogged(user)),
   logOut: () => dispatch(logOut()),
-  failedLoginAttempt: () => dispatch(failedLoginAttempt())
+  failedLoginAttempt2: () => dispatch(failedLoginAttempt()),
+  // logIn: (username, password) => dispatch(logIn(username, password))
 })
+
 
 class LogForm extends React.Component {
   constructor() {
@@ -31,7 +33,12 @@ class LogForm extends React.Component {
   }
 
   handleSubmit = (event) => {
+
+
+
     event.preventDefault()
+    //this.props.logIn(this.state.userLogin, this.state.userPassword)
+
     fetch(
       process.env.PUBLIC_URL + '/data/users.json'
     ).then(
@@ -44,14 +51,17 @@ class LogForm extends React.Component {
         )
     ).then(
       (loggedUser) => {
-        this.props.inlogged(loggedUser)
-            return (this.setState({
-              ...this.state,
-              isLogged: true,
-              loggedUser: loggedUser
-            }))
-          }
-        ).catch(() => console.error('Fetch went wrong - LogForm' + this.props.failedLoginAttempt()))
+        if (loggedUser === undefined) {
+          this.props.failedLoginAttempt2()
+        } else {
+          this.props.inlogged(loggedUser)
+          this.setState({
+            ...this.state,
+            isLogged: true,
+            loggedUser: loggedUser
+          })
+        }
+      })
   }
 
   render() {
