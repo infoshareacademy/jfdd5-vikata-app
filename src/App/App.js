@@ -1,8 +1,16 @@
 import React from 'react'
-import {PageHeader, Row, Col, Grid, Clearfix} from 'react-bootstrap'
+import { connect} from 'react-redux'
+import {PageHeader, Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
-import {TypesView} from '../TypesView'
+import { TypesView } from '../TypesView'
+import { UserWantedListView} from '../userWantedListView'
+import { UserSellListView} from '../UserSellListView'
+import {LogForm} from '../LoginPanelView'
+
+const mapStateToProps = (state) => ({
+
+})
 import {LogForm} from '../LoginPanelView'
 
 class App extends React.Component {
@@ -13,15 +21,18 @@ class App extends React.Component {
           <small>Nietypowe pojazdy</small>
         </PageHeader>
         <LogForm/>
-        <Grid>
+        <Grid fluid>
           <Row className="show-grid">
-            <Col>
-              <CarSelectionForm/>
+            <Col md={2}>
+              <UserSellListView/>
             </Col>
-            <Clearfix/>
-            <Col>
-            <TypesView/>
-            {this.props.children}
+            <Col md={8}>
+              <CarSelectionForm/>
+              <TypesView/>
+              {this.props.children}
+            </Col>
+            <Col md={2}>
+              <UserWantedListView/>
             </Col>
           </Row>
         </Grid>
@@ -30,4 +41,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+export default connect(mapStateToProps)(App)

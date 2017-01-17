@@ -3,11 +3,12 @@
  */
 import {MenuItem, Navbar, Nav, NavDropdown, NavItem} from "react-bootstrap";
 import React from "react";
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import logo from './logo.png'
 import './CarSelectionForm.css'
 
 const mapStateToProps = state => ({
+  // students: state.studentsData.students
   brands: state.appData.brands,
   models: state.appData.models,
   selectedBrand: state.appData.selectedBrand,
@@ -20,7 +21,9 @@ const mapDispatchToProps = dispatch => ({
   resetSelection: resetId => dispatch({type: 'RESET'})
 })
 
+
 class CarSelectionForm extends React.Component {
+
 
   render() {
 
@@ -71,6 +74,5 @@ class CarSelectionForm extends React.Component {
     )
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarSelectionForm)
