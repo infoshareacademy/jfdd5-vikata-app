@@ -2,7 +2,7 @@
  * Created by alanw on 15.12.2016.
  */
 import React from 'react'
-import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label, Button, Modal} from 'react-bootstrap'
+import {ListGroup, ListGroupItem,Grid, Row, Col, Clearfix, Well, Image, Label, Button, Modal, Navbar} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import './PartsListView.css'
 import ContactModal from './contactModal/ContactModal'
@@ -16,9 +16,7 @@ const mapStateToProps = state => ({
 })
 
 const PartsListView = (props) => (
-  <Grid>
-    <Row className="show-grid">
-      <Well>
+  <Well>
         <h1>Lista części typu: {
         props.partsTypes.find(
           type =>
@@ -26,7 +24,7 @@ const PartsListView = (props) => (
         ).type.toLowerCase()
       }
     </h1>
-        <Col>
+
       <ListGroup>
         {
           props.parts.filter(
@@ -50,13 +48,13 @@ const PartsListView = (props) => (
               )
 
               return (
-                <ListGroupItem key={part.id}  className="PartsListView-tile">
-                  <Grid>
-                    <Row className="show-grid">
-                      <Col md={4}>
+                <ListGroupItem key={part.id}  className="PartsListView-tile" >
+
+                    <Row>
+                      <Col md={2}>
                         <Image src={process.env.PUBLIC_URL + '/img/img-parts/' + part.image} rounded responsive/>
                       </Col>
-                      <Col md={5}>
+                      <Col md={7}>
                         <h2>
                           {part.name}
                         </h2>
@@ -64,19 +62,18 @@ const PartsListView = (props) => (
                           {part.description}
                         </p>
                       </Col>
-                      <Col md={2}>
+                      <Col md={3}>
                         {
                           isToSell === true ?
                             <div>
-                              <h2><Label bsStyle="success">Na sprzedaż</Label></h2>
-                              <h3><Label bsStyle="info">Cena: {part.price}</Label></h3>
-                            </div> : <h2><Label bsStyle="warning">Poszukiwane</Label></h2>
+                              <h3><Label bsStyle="success">Na sprzedaż</Label></h3>
+                              <h4><Label bsStyle="info">Cena: {part.price}</Label></h4>
+                            </div> : <h3><Label bsStyle="warning">Poszukiwane</Label></h3>
                         }
 
                         <ContactModal user={isToSell === true ? userWhoSells : userWhoWants}/>
                       </Col>
                     </Row>
-                  </Grid>
 
                   {/*                <ButtonGroup>
                    <LinkContainer to={'/parts-list/' + part.id+""}>
@@ -95,11 +92,8 @@ const PartsListView = (props) => (
           )
         }
       </ListGroup>
-        </Col>
-        <Clearfix/>
-      </Well>
-    </Row>
-  </Grid>
+
+  </Well>
 )
 
 export default connect(mapStateToProps)(PartsListView)
