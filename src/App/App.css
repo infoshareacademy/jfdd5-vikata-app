@@ -1,15 +1,21 @@
 .pageHeader {
   width:100%;
-  background-image:url('../../public/img/img-header/vikata-app-baner.jpg');
+  background-image:url('../../public/img/img-header/head-banner.jpg');
   background-size:cover;
 }
-@media screen and (min-width:550px) and (max-width:1200px) {
+@media screen and (max-width:500px) {
   .pageHeader {
-    min-height:220px;
+    min-height:200px;
   }
 }
-@media screen and (min-width:1201px){
+
+@media screen and (min-width:501px) and (max-width:800px) {
   .pageHeader {
-    min-height:330px;
+    min-height:400px;
+  }
+}
+@media screen and (min-width:801px){
+  .pageHeader {
+    min-height:550px;
   }
 }
