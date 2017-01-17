@@ -10,7 +10,8 @@ import './LogForm.css'
 const mapStateToProps = state => ({
   isLogged: state.isLoggedData.isLogged,
   loggedUser: state.isLoggedData.loggedUser,
-  failedLoginAttempt: state.isLoggedData.failedLoginAttempt
+  failedLoginAttempt: state.isLoggedData.failedLoginAttempt,
+  userLogin: state.isLoggedData.loggedUserName
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -36,11 +37,7 @@ class LogForm extends React.Component {
 
   handleSubmit = (event) => {
 
-
-
     event.preventDefault()
-    //this.props.logIn(this.state.userLogin, this.state.userPassword)
-
     fetch(
       process.env.PUBLIC_URL + '/data/users.json'
     ).then(
@@ -67,12 +64,11 @@ class LogForm extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="loginform">
         {this.props.isLogged ?
           <div>
-            <h2>Witaj</h2>
+            <h2>Witaj, {this.props.userLogin}</h2>
             <button onClick={() => this.props.logOut()}>
               Wyloguj
             </button>

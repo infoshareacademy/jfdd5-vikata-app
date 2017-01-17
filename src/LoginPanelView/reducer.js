@@ -17,6 +17,7 @@ export default (state = initialState, action) => {
         isLogged: true,
         failedLoginAttempt: false,
         loggedUser: action.userData.id,
+        loggedUserName: action.userData.name
       }
     case LOG_OUT:
       return {
