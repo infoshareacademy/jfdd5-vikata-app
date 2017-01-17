@@ -4,7 +4,7 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
-import { UserWantedListView} from '../UserWantedListView'
+import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
 
 const mapStateToProps = (state) => ({

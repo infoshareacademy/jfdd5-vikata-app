@@ -2,7 +2,7 @@
  * Created by alanw on 16.01.2017.
  */
 import React from 'react'
-import {Button, Image, Row} from 'react-bootstrap'
+import {Button, Image} from 'react-bootstrap'
 
 class PartToSellView extends React.Component{
 
