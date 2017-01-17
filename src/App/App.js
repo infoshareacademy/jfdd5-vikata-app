@@ -11,7 +11,6 @@ import {LogForm} from '../LoginPanelView'
 const mapStateToProps = (state) => ({
 
 })
-import {LogForm} from '../LoginPanelView'
 
 class App extends React.Component {
   render() {
