@@ -6,6 +6,7 @@ import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
+import PartFilterView from '../partFilterView/PartFilterView'
 
 const mapStateToProps = (state) => ({
 
@@ -21,7 +22,6 @@ class App extends React.Component {
               <UserSellListView/>
             </Col>
             <Col md={8}>
-              <CarSelectionForm/>
               <TypesView/>
               {this.props.children}
             </Col>

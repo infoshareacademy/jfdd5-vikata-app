@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 import logo from './logo.png'
 
 const mapStateToProps = state => ({
-  // students: state.studentsData.students
   brands: state.appData.brands,
   models: state.appData.models,
   selectedBrand: state.appData.selectedBrand,
