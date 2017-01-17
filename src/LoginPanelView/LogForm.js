@@ -4,6 +4,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { inlogged, logOut, failedLoginAttempt } from './actionCreators'
+import { FormControl, FormGroup} from 'react-bootstrap'
+import './LogForm.css'
 
 const mapStateToProps = state => ({
   isLogged: state.isLoggedData.isLogged,
@@ -65,8 +67,9 @@ class LogForm extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div>
+      <div className="loginform">
         {this.props.isLogged ?
           <div>
             <h2>Witaj</h2>
@@ -77,9 +80,10 @@ class LogForm extends React.Component {
           <div>
             <h2>Zaloguj się</h2>
             <form onSubmit={this.handleSubmit}>
+              <FormGroup controlId="formBasicText">
               <inputLabel>Login:</inputLabel>
 
-              <input type="text"
+              <FormControl type="text"
                      value={this.state.userLogin}
                      onChange={
                        event =>
@@ -92,7 +96,7 @@ class LogForm extends React.Component {
 
               <inputLabel>Hasło</inputLabel>
 
-              <input type="password"
+              <FormControl type="password"
                      value={this.state.userPassword}
                      onChange={
                        event =>
@@ -112,6 +116,7 @@ class LogForm extends React.Component {
                   </h4> :
                   ''
               }
+              </FormGroup>
             </form>
           </div>
         }
