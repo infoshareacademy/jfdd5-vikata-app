@@ -1,0 +1,10 @@
+Change from js to json:
+([a-z]+):      to:
+"$1":
+
+
+<Button beActive={true}></Button>
+
+              render() {
+  <button className={this.props.beActive === true? 'btn btn-active' : 'btn'}>
+            }

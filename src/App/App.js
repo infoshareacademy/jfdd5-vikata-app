@@ -1,20 +1,24 @@
 import React from 'react'
 import { connect} from 'react-redux'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {PageHeader, Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
 import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
+import { LoginPanelView } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
-
 })
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <PageHeader bsClass="pageHeader">
+          <div><h2>Autonaprawiacz</h2></div>
+        </PageHeader>
+        <LoginPanelView/>
         <Grid fluid>
           <Row className="show-grid">
             <Col md={2}>
@@ -35,5 +39,4 @@ class App extends React.Component {
   }
 }
 
-
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)
