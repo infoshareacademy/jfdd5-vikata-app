@@ -15,8 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <PageHeader bsClass="pageHeader">Autonaprawiatch v.2.0
-          <small>Nietypowe pojazdy</small>
+        <PageHeader bsClass="pageHeader">
+          <div><h2>Autonaprawiacz</h2></div>
         </PageHeader>
         <LoginPanelView/>
         <Grid fluid>

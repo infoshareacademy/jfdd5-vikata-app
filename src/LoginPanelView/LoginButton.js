@@ -5,6 +5,7 @@ import React from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import LogForm from './LogForm'
+import './LoginButton.css'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged
