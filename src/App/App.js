@@ -6,7 +6,6 @@ import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
-import {LogForm} from '../LoginPanelView'
 import { LoginPanelView } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({

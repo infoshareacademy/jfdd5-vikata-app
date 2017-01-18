@@ -5,7 +5,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { loggedIn, logOut, failedLoginAttempt } from './actionCreators'
 import { FormControl, FormGroup} from 'react-bootstrap'
-import './LogForm.css'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged,

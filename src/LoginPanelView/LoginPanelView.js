@@ -2,47 +2,13 @@
  * Created by rafalmiler on 12.01.17.
  */
 import React from 'react'
-import {Button, Modal, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
-import {connect} from 'react-redux'
+import { Button, Modal } from 'react-bootstrap'
+import { connect } from 'react-redux'
 import LogForm from './LogForm'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged
 })
-
-function FieldGroup({ id, label, help, ...props }) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
-}
-
-const loginForm = (
-  <form>
-    <FieldGroup
-      id="formControlsText"
-      type="text"
-      label="Login"
-      placeholder="Wpisz login"
-    />
-    <FieldGroup
-      id="formControlsPassword"
-      label="Hasło"
-      type="password"
-      onChange={
-        event => this.setState({
-          login: event.target.value
-        })
-      }
-    />
-    <Button type="submit">
-      Zaloguj
-    </Button>
-  </form>
-);
 
 class LoginPanelView extends React.Component {
   constructor() {
@@ -52,8 +18,6 @@ class LoginPanelView extends React.Component {
       show: false
     })
   }
-
-
 
   render() {
     let close = () => this.setState({ show: false});
@@ -68,7 +32,22 @@ class LoginPanelView extends React.Component {
           Zaloguj się
         </Button>
 
-        {this.state.show === true ? <LogForm closeModal={() => this.setState({ show: false})}/> : null }
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">Panel logowania</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <LogForm/>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
