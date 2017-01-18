@@ -3,19 +3,19 @@
  */
 import React from 'react'
 import {connect} from 'react-redux'
-import { inlogged, logOut, failedLoginAttempt } from './actionCreators'
+import { loggedIn, logOut, failedLoginAttempt } from './actionCreators'
 import { FormControl, FormGroup} from 'react-bootstrap'
 import './LogForm.css'
 
 const mapStateToProps = state => ({
-  isLogged: state.isLoggedData.isLogged,
-  loggedUser: state.isLoggedData.loggedUser,
-  failedLoginAttempt: state.isLoggedData.failedLoginAttempt,
-  userLogin: state.isLoggedData.loggedUserName
+  isLogged: state.logData.isLogged,
+  loggedUser: state.logData.loggedUser,
+  failedLoginAttempt: state.logData.failedLoginAttempt,
+  userLogin: state.logData.loggedUserName
 })
 
 const mapDispatchToProps = dispatch => ({
-  inlogged: (user) => dispatch(inlogged(user)),
+  loggedIn: (user) => dispatch(loggedIn(user)),
   logOut: () => dispatch(logOut()),
   failedLoginAttempt2: () => dispatch(failedLoginAttempt()),
   // logIn: (username, password) => dispatch(logIn(username, password))
@@ -53,7 +53,7 @@ class LogForm extends React.Component {
         if (loggedUser === undefined) {
           this.props.failedLoginAttempt2()
         } else {
-          this.props.inlogged(loggedUser)
+          this.props.loggedIn(loggedUser)
           this.setState({
             ...this.state,
             isLogged: true,

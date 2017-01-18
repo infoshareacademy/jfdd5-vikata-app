@@ -3,7 +3,7 @@
  */
 import {LOGGED_IN, LOG_OUT, FAILED_LOGIN_ATTEMPT} from './actionTypes'
 
-export const inlogged = (user) => ({
+export const loggedIn = (user) => ({
   type: LOGGED_IN,
   userData: user
 })
@@ -15,12 +15,4 @@ export const logOut = () => ({
 export const failedLoginAttempt = () => ({
   type: FAILED_LOGIN_ATTEMPT
 })
-//
-// export const logIn = (username, password) => {
-//   return (dispatach) => {
-//     dispatch({ type: 'LOG_IN__BEGIN'})
-//     // fetch().catch(
-//     //   error => dispatch({ type: 'FA'})
-//     // )
-//   }
-// }
+

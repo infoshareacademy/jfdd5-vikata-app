@@ -9,7 +9,6 @@ import { UserSellListView} from '../UserSellListView'
 import {LogForm} from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
-
 })
 
 class App extends React.Component {
@@ -39,6 +38,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default connect(mapStateToProps)(App)

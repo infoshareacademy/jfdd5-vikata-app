@@ -7,7 +7,7 @@ import { reducer as loginReducer } from './LoginPanelView'
 
 const reducer = combineReducers({
   appData: appReducer,
-  isLoggedData: loginReducer
+  logData: loginReducer
 })
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
