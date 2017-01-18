@@ -5,7 +5,6 @@ export default [
     name: 'Działo Jonowe "Miotacz 2000"',
     description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit cursus augue sed eleifend. Donec mattis massa sit amet porttitor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer vehicula tristique laoreet. Quisque nisi eros, scelerisque sed nibh eu, pellentesque aliquet quam. Nullam euismod mattis mi, nec ultricies turpis imperdiet ac. Sed molestie massa erat, ut ullamcorper arcu scelerisque eu.'],
     price: 2001,
-    environment:[],
     vehicleType:[],
     image: 'part01.jpg'
   },

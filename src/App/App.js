@@ -2,7 +2,6 @@ import React from 'react'
 import { connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
-import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
@@ -23,6 +22,7 @@ class App extends React.Component {
             </Col>
             <Col md={8}>
               <TypesView/>
+              <PartFilterView/>
               {this.props.children}
             </Col>
             <Col md={2}>

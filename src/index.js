@@ -12,8 +12,6 @@ import { PartsListView } from './PartsListView'
 import { Provider } from 'react-redux'
 import store from './store'
 
-
-
 ReactDOM.render(
   <Provider store={store}>
   <Router history={browserHistory}>
@@ -27,8 +25,6 @@ ReactDOM.render(
   </Router>
  </Provider>,
   document.getElementById('root')
-
-
 
 );
 

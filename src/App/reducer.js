@@ -1,9 +1,7 @@
-import {brands, models, parts, users, types} from "../data";
+import {parts, users, types} from "../data";
 
 
 const initialState = {
-  brands: brands,
-  models: models,
   parts: parts,
   users: users,
   partsTypes: types,
