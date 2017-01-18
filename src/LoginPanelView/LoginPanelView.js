@@ -4,9 +4,10 @@
 import React from 'react'
 import {Button, Modal, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 import {connect} from 'react-redux'
+import LogForm from './LogForm'
 
 const mapStateToProps = state => ({
-  isLogged: state.isLoggedData.isLogged
+  isLogged: state.logData.isLogged
 })
 
 function FieldGroup({ id, label, help, ...props }) {
@@ -19,7 +20,7 @@ function FieldGroup({ id, label, help, ...props }) {
   );
 }
 
-const logForm = (
+const loginForm = (
   <form>
     <FieldGroup
       id="formControlsText"
@@ -67,22 +68,8 @@ class LoginPanelView extends React.Component {
           Zaloguj się
         </Button>
 
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">Panel logowania</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {logForm}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+
+        {this.state.show === true ? <LogForm closeModal={() => this.setState({ show: false})}/> : null }
       </div>
     );
   }

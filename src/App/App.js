@@ -7,6 +7,7 @@ import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
 import {LogForm} from '../LoginPanelView'
+import { LoginPanelView } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
 })
@@ -18,7 +19,7 @@ class App extends React.Component {
         <PageHeader bsClass="pageHeader">Autonaprawiatch v.2.0
           <small>Nietypowe pojazdy</small>
         </PageHeader>
-        <LogForm/>
+        <LoginPanelView/>
         <Grid fluid>
           <Row className="show-grid">
             <Col md={2}>

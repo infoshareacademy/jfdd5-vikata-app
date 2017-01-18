@@ -21,7 +21,6 @@ const mapDispatchToProps = dispatch => ({
   // logIn: (username, password) => dispatch(logIn(username, password))
 })
 
-
 class LogForm extends React.Component {
   constructor() {
     super()
@@ -113,7 +112,10 @@ class LogForm extends React.Component {
                   ''
               }
               </FormGroup>
+
+
             </form>
+            <button onClick={() => this.props.closeModal()}>Zamknij</button>
           </div>
         }
       </div>
