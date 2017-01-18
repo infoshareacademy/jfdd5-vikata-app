@@ -68,7 +68,6 @@ class LoginPanelView extends React.Component {
           Zaloguj się
         </Button>
 
-
         {this.state.show === true ? <LogForm closeModal={() => this.setState({ show: false})}/> : null }
       </div>
     );

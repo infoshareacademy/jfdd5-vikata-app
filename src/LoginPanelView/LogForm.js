@@ -113,7 +113,6 @@ class LogForm extends React.Component {
               }
               </FormGroup>
 
-
             </form>
             <button onClick={() => this.props.closeModal()}>Zamknij</button>
           </div>
