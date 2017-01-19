@@ -10,30 +10,37 @@ import { LoginPanelView } from '../LoginPanelView'
 import { LogForm } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
+  isLogged: state.logData.isLogged
 })
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <PageHeader bsClass="pageHeader">
-          <div><h2>Autonaprawiacz</h2></div>
-        </PageHeader>
-        <LoginPanelView/>
-        <LogForm/>
+        {this.props.isLogged === false ?
+          <div><PageHeader bsClass="pageHeader">
+            <div><h2>Autonaprawiacz</h2></div>
+          </PageHeader>
+            <LoginPanelView/></div> : <LogForm/>
+        }
         <Grid fluid>
           <Row className="show-grid">
-            <Col md={2}>
-              <UserSellListView/>
-            </Col>
-            <Col md={8}>
+            {this.props.isLogged ?
+              <Col md={2}>
+                <UserSellListView/>
+              </Col> : null
+            }
+            <Col
+              md={this.props.isLogged ? 8 :12}>
               <CarSelectionForm/>
               <TypesView/>
               {this.props.children}
             </Col>
-            <Col md={2}>
-              <UserWantedListView/>
-            </Col>
+            {this.props.isLogged ?
+              <Col md={2}>
+                <UserWantedListView/>
+              </Col> : null
+            }
           </Row>
         </Grid>
       </div>

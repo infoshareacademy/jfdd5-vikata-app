@@ -66,12 +66,9 @@ class LogForm extends React.Component {
         {this.props.isLogged ?
           <div>
             <h2>Witaj, {this.props.userLogin}</h2>
-            <button onClick={() => this.props.logOut()}>
-              Wyloguj
-            </button>
+            <button onClick={() => this.props.logOut()}>Wyloguj</button>
           </div> :
           <div>
-            <h2>Zaloguj się</h2>
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="formBasicText">
               <inputLabel>Login:</inputLabel>
