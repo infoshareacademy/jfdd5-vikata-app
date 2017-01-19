@@ -7,6 +7,7 @@ import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
 import { LoginPanelView } from '../LoginPanelView'
+import { LogForm } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
 })
@@ -19,6 +20,7 @@ class App extends React.Component {
           <div><h2>Autonaprawiacz</h2></div>
         </PageHeader>
         <LoginPanelView/>
+        <LogForm/>
         <Grid fluid>
           <Row className="show-grid">
             <Col md={2}>
