@@ -5,6 +5,7 @@ import {MenuItem, Navbar, Nav, NavDropdown, NavItem} from "react-bootstrap";
 import React from "react";
 import { connect } from 'react-redux'
 import logo from './logo.png'
+// import './CarSelectionForm.css'
 
 const mapStateToProps = state => ({
   // students: state.studentsData.students
@@ -33,22 +34,22 @@ class CarSelectionForm extends React.Component {
     );
 
     const modelsListItems = this.props.selectedBrand !== null ? this.props.models.filter(
-      model => this.props.selectedBrand.modelsIds.indexOf(model.id) !== -1
-    ).map(
-      model =>
-        <MenuItem eventKey={model.id}>{model.name}</MenuItem>
-    ) : []
+        model => this.props.selectedBrand.modelsIds.indexOf(model.id) !== -1
+      ).map(
+        model =>
+          <MenuItem eventKey={model.id}>{model.name}</MenuItem>
+      ) : []
 
     return (
       <div>
-        <Navbar ClassName="navbar">
+        <Navbar className="navbar">
           <Navbar.Header>
             <Navbar.Brand>
               <img src={logo}/>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav >
-            <NavDropdown ClassName="navbar"
+            <NavDropdown className="navbar"
                          bsStyle="1"
                          title={this.props.selectedBrand ? this.props.selectedBrand.name : 'Wybierz markę'}
                          key={1}
@@ -66,10 +67,7 @@ class CarSelectionForm extends React.Component {
               {modelsListItems}
             </NavDropdown>
 
-
-             <NavItem onSelect={() =>this.props.resetSelection() }> Resetuj wybór</NavItem>
-
-
+            <NavItem onSelect={() => this.props.resetSelection() }> Resetuj wybór</NavItem>
           </Nav>
         </Navbar>
       </div>
