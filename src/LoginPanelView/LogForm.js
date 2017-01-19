@@ -5,6 +5,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { loggedIn, logOut, failedLoginAttempt } from './actionCreators'
 import { FormControl, FormGroup} from 'react-bootstrap'
+import { Col, Row, Button, Well } from 'react-bootstrap'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged,
@@ -62,13 +63,14 @@ class LogForm extends React.Component {
 
   render() {
     return (
-      <div className="loginform">
+      <Well>
         {this.props.isLogged ?
-          <div>
-            <h2>Witaj, {this.props.userLogin}</h2>
-            <button onClick={() => this.props.logOut()}>Wyloguj</button>
-          </div> :
-          <div>
+            <Row>
+            <Col md={3}><h4>Zalogowany jako {this.props.userLogin}</h4></Col>
+              <Col md={9}><Button bsStyle="primary" onClick={() => this.props.logOut()}>Wyloguj</Button></Col>
+            </Row>
+           :
+          <div className="loginform">
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="formBasicText">
               <inputLabel>Login:</inputLabel>
@@ -110,7 +112,7 @@ class LogForm extends React.Component {
             </form>
           </div>
         }
-      </div>
+      </Well>
     )
   }
 }
