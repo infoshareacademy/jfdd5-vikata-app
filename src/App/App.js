@@ -2,10 +2,10 @@ import React from 'react'
 import { connect} from 'react-redux'
 import {PageHeader, Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
-import {CarSelectionForm} from '../CarSelectionForm'
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
+import PartFilterView from '../partFilterView/PartFilterView'
 import { LoginPanelView } from '../LoginPanelView'
 import { LogForm } from '../LoginPanelView'
 
@@ -32,8 +32,8 @@ class App extends React.Component {
             }
             <Col
               md={this.props.isLogged ? 8 :12}>
-              <CarSelectionForm/>
               <TypesView/>
+              <PartFilterView/>
               {this.props.children}
             </Col>
             {this.props.isLogged ?

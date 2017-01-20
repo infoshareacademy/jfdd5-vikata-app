@@ -8,9 +8,7 @@ import logo from './logo.png'
 // import './CarSelectionForm.css'
 
 const mapStateToProps = state => ({
-  // students: state.studentsData.students
-  brands: state.appData.brands,
-  models: state.appData.models,
+
   selectedBrand: state.appData.selectedBrand,
   selectedModel: state.appData.selectedModel
 })

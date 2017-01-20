@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   parts: state.appData.parts,
   users: state.appData.users,
   selectedType: state.appData.selectedType,
-  selectedModel: state.appData.selectedModel
+  selectedVehicleType: state.appData.selectedVehicleType
 })
 
 const PartsListView = (props) => (
@@ -30,7 +30,7 @@ const PartsListView = (props) => (
           props.parts.filter(
             part => part.typeId === props.selectedType
           ).filter(
-            (part) => props.selectedModel === null ? true : props.selectedModel.partsIds.indexOf( part.id ) !== -1
+            part => props.selectedVehicleType === null ? true : part.vehicleType.indexOf( props.selectedVehicleType ) !== -1
           ).map(
             (part) => {
               const isToSell = props.users.map(
