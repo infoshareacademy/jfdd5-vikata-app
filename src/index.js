@@ -5,25 +5,21 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css';
 import { App } from './App'
-
-
 import { PartsListView } from './PartsListView'
-
 import { Provider } from 'react-redux'
 import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={PartsListView}/>
-      <Route path="/parts-list" component={PartsListView}>
-
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={PartsListView}/>
+        <Route path="/parts-list" component={PartsListView}>
+        </Route>
       </Route>
-    </Route>
-  {/*<Route path="*" component={NotFoundView} />*/}
-  </Router>
- </Provider>,
+      {/*<Route path="*" component={NotFoundView} />*/}
+    </Router>
+  </Provider>,
   document.getElementById('root')
 
 );
