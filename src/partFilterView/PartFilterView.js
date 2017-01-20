@@ -2,7 +2,12 @@
  * Created by alanw on 17.01.2017.
  */
 import React from 'react'
-import {Well, ButtonGroup, DropdownButton, MenuItem} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {Well, ButtonGroup, DropdownButton, MenuItem, Button} from 'react-bootstrap'
+
+const mapDispatchToProps = dispatch => ({
+  setType: (vehicleType) => dispatch({type: 'SET_VEHICLE_TYPE', vehicleType: vehicleType})
+})
 
 class PartFilterView extends React.Component {
 
@@ -11,26 +16,27 @@ class PartFilterView extends React.Component {
     <Well>
       <ButtonGroup>
         <DropdownButton title="lądowe">
-          <MenuItem>samochody</MenuItem>
-          <MenuItem>motocykle</MenuItem>
-          <MenuItem>inne</MenuItem>
+          <MenuItem onClick={() => this.props.setType(1)}>samochody</MenuItem>
+          <MenuItem onClick={() => this.props.setType(2)}>motocykle</MenuItem>
+          <MenuItem onClick={() => this.props.setType(3)}>inne</MenuItem>
         </DropdownButton>
 
         <DropdownButton title="pływające">
-          <MenuItem>statki</MenuItem>
-          <MenuItem>łodzie podwodne</MenuItem>
-          <MenuItem>inne</MenuItem>
+          <MenuItem onClick={() => this.props.setType(4)}>statki</MenuItem>
+          <MenuItem onClick={() => this.props.setType(5)}>łodzie podwodne</MenuItem>
+          <MenuItem onClick={() => this.props.setType(6)}>inne</MenuItem>
         </DropdownButton>
 
         <DropdownButton title="latające">
-          <MenuItem>samoloty</MenuItem>
-          <MenuItem>helikoptery</MenuItem>
-          <MenuItem>inne</MenuItem>
+          <MenuItem onClick={() => this.props.setType(7)}>samoloty</MenuItem>
+          <MenuItem onClick={() => this.props.setType(8)}>helikoptery</MenuItem>
+          <MenuItem onClick={() => this.props.setType(9)}>inne</MenuItem>
         </DropdownButton>
+        <Button onClick={() => this.props.setType(null)}>Reset</Button>
       </ButtonGroup>
     </Well>
     )
   }
 }
 
-export default PartFilterView
+export default connect(null,mapDispatchToProps) (PartFilterView)
