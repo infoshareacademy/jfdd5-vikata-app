@@ -12,6 +12,7 @@ import './TypesView.css'
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   selectedType: state.appData.selectedType,
+  types: state.typesData.types
 })
 
 const mapDispatchToProps = dispatch => ({

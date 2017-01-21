@@ -8,11 +8,14 @@ import { App } from './App'
 import { PartsListView } from './PartsListView'
 import { Provider } from 'react-redux'
 import store from './store'
+import { fetchTypes } from './TypesView/actionCreators'
+
+const fetchTypesOnEnter = () => store.dispatch(fetchTypes())
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/" component={App}  onEnter={fetchTypesOnEnter}>
         <IndexRoute component={PartsListView}/>
         <Route path="/parts-list" component={PartsListView}>
         </Route>
