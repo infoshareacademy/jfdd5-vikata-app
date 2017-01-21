@@ -9,7 +9,7 @@ export default [
   },
   {
     id: 3,
-    name: 'inne'
+    name: 'lądowe/inne'
   },
 
   {
@@ -22,7 +22,7 @@ export default [
   },
   {
     id: 6,
-    name: 'inne'
+    name: 'latające/inne'
   },
 
   {
@@ -35,7 +35,7 @@ export default [
   },
   {
     id: 9,
-    name: 'inne'
+    name: 'pływające/inne'
   }
 
 

@@ -17,18 +17,20 @@ const mapStateToProps = state => ({
 
 const PartsListView = (props) => (
   <Well>
-        <h1>Lista części typu: {
+{/*        <h1>Lista części typu: {
         props.partsTypes.find(
           type =>
           type.id === props.selectedType
         ).type.toLowerCase()
       }
-    </h1>
+    </h1>*/}
 
       <ListGroup>
         {
-          props.parts.filter(
-            part => part.typeId === props.selectedType
+          (props.selectedType===null? props.parts : (
+              props.parts.filter(
+              part => part.typeId === props.selectedType)
+            )
           ).filter(
             part => props.selectedVehicleType === null ? true : part.vehicleType.indexOf( props.selectedVehicleType ) !== -1
           ).map(
