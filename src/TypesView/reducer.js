@@ -14,8 +14,7 @@ export default (state = initialState, action)=>{
   switch(action.type){
     case FETCH_TYPES_BEGIN:
       return {
-        ...state,
-        pending: true
+        ...state
       }
     case FETCH_TYPES_END:
       return {

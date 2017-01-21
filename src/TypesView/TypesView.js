@@ -12,7 +12,7 @@ import './TypesView.css'
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   selectedType: state.appData.selectedType,
-  types: state.typesData.types
+  typesFromFetching: state.typesData.types
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -23,7 +23,7 @@ const TypesView = (props) => (
       <ListGroup>
         <Well>
           {
-            props.partsTypes.map(
+            props.typesFromFetching.map(
               typ =>
                 <Col md={4}
                      onClick={() => props.showType(typ.id)}
