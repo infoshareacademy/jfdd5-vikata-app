@@ -7,7 +7,7 @@ import {
 } from './actionTypes'
 
 const initialState = {
-  types: null
+  partTypes: []
 }
 
 export default (state = initialState, action)=>{
@@ -19,7 +19,7 @@ export default (state = initialState, action)=>{
     case FETCH_TYPES_END:
       return {
         ...state,
-        types: action.types
+        partTypes: action.types
       }
     default:
       return initialState

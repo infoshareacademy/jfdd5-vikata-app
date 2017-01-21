@@ -5,14 +5,13 @@ import React from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 import {connect} from 'react-redux'
-import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
+import { Col, Clearfix, Well} from 'react-bootstrap'
 
 import './TypesView.css'
 
 const mapStateToProps = state => ({
-  partsTypes: state.appData.partsTypes,
   selectedType: state.appData.selectedType,
-  typesFromFetching: state.typesData.types
+  partsTypes: state.typesData.partTypes
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -23,7 +22,7 @@ const TypesView = (props) => (
       <ListGroup>
         <Well>
           {
-            props.typesFromFetching.map(
+            props.partsTypes.map(
               typ =>
                 <Col md={4}
                      onClick={() => props.showType(typ.id)}
