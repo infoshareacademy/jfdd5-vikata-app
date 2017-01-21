@@ -14,11 +14,11 @@ export default [
 
   {
     id: 4,
-    name: 'helikopter'
+    name: 'samolot'
   },
   {
     id: 5,
-    name: 'samolot'
+    name: 'helikopter'
   },
   {
     id: 6,

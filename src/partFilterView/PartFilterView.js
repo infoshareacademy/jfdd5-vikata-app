@@ -21,17 +21,18 @@ class PartFilterView extends React.Component {
           <MenuItem onClick={() => this.props.setType(3)}>inne</MenuItem>
         </DropdownButton>
 
-        <DropdownButton title="pływające">
-          <MenuItem onClick={() => this.props.setType(4)}>statki</MenuItem>
-          <MenuItem onClick={() => this.props.setType(5)}>łodzie podwodne</MenuItem>
+        <DropdownButton title="latające">
+          <MenuItem onClick={() => this.props.setType(4)}>samoloty</MenuItem>
+          <MenuItem onClick={() => this.props.setType(5)}>helikoptery</MenuItem>
           <MenuItem onClick={() => this.props.setType(6)}>inne</MenuItem>
         </DropdownButton>
 
-        <DropdownButton title="latające">
-          <MenuItem onClick={() => this.props.setType(7)}>samoloty</MenuItem>
-          <MenuItem onClick={() => this.props.setType(8)}>helikoptery</MenuItem>
+        <DropdownButton title="pływające">
+          <MenuItem onClick={() => this.props.setType(7)}>statki</MenuItem>
+          <MenuItem onClick={() => this.props.setType(8)}>łodzie podwodne</MenuItem>
           <MenuItem onClick={() => this.props.setType(9)}>inne</MenuItem>
         </DropdownButton>
+
         <Button onClick={() => this.props.setType(null)}>Reset</Button>
       </ButtonGroup>
     </Well>

@@ -23,7 +23,7 @@ export default [
       ],
 
       partsWanted: [
-        4, 5
+        7, 8
       ]
     },
   {
@@ -42,7 +42,7 @@ export default [
     },
 
     partsToSell: [
-      6, 7, 8
+      4
     ],
 
     partsWanted: [
@@ -65,7 +65,7 @@ export default [
     },
 
     partsToSell: [
-      10
+      5,6
     ],
 
     partsWanted: [
