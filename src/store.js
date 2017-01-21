@@ -6,9 +6,11 @@ import thunkMiddleware from 'redux-thunk'
 import { reducer as appReducer } from './App'
 import { reducer as loginReducer } from './LoginPanelView'
 import { reducer as typesReducer } from './TypesView'
+import { reducer as partsReducer } from './PartsListView'
 
 const reducer = combineReducers({
   typesData: typesReducer,
+  partsData: partsReducer,
   appData: appReducer,
   logData: loginReducer
 })

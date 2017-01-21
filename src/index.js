@@ -8,11 +8,14 @@ import { App } from './App'
 import { PartsListView } from './PartsListView'
 import { Provider } from 'react-redux'
 import store from './store'
-import { fetchTypes } from './TypesView/actionCreators'
+import { fetchTypes } from './TypesView/state/actionCreators'
+import { fetchParts } from './PartsListView/state/actionCreators'
 
 const fetchTypesOnEnter = () =>
-  store.dispatch(fetchTypes()
-  )
+  store.dispatch(fetchTypes())
+
+const fetchPartsOnEnter = () =>
+  store.dispatch(fetchParts())
 
 ReactDOM.render(
   <Provider store={store}>
