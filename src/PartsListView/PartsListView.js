@@ -27,8 +27,10 @@ const PartsListView = (props) => (
 
       <ListGroup>
         {
-          props.parts.filter(
-            part => part.typeId === props.selectedType
+          (props.selectedType===null? props.parts : (
+              props.parts.filter(
+              part => part.typeId === props.selectedType)
+            )
           ).filter(
             part => props.selectedVehicleType === null ? true : part.vehicleType.indexOf( props.selectedVehicleType ) !== -1
           ).map(

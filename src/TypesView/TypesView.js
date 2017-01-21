@@ -25,7 +25,9 @@ const TypesView = (props) => (
             props.partsTypes.map(
               typ =>
                 <Col md={4}
-                     onClick={() => props.showType(typ.id)}
+                     onClick={() => (
+                       props.selectedType === null ?  props.showType(typ.id) : props.showType(null)
+                     )}
                      className="TypesView-tile">
                   <ListGroupItem key={typ.id}
                                  className={

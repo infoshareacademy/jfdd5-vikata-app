@@ -24,10 +24,12 @@ class PartFilterView extends React.Component {
       <ControlLabel>Aktywne filtry:</ControlLabel>
 
       <Label>{
-        this.props.partsTypes.find(
-          type =>
-          type.id === this.props.selectedType
-        ).type.toLowerCase()
+        this.props.selectedType===null||undefined ? true : (
+          this.props.partsTypes.find(
+            type =>
+            type.id === this.props.selectedType
+          ).type.toLowerCase()
+        )
       }</Label>
 
      <Label>{

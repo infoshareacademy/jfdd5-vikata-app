@@ -6,7 +6,7 @@ const initialState = {
   users: users,
   partsTypes: types,
   selectedVehicleType: null,
-  selectedType: 1,
+  selectedType: null,
   vehicleTypes:vehicleType,
   loggedUser: 1
 }
