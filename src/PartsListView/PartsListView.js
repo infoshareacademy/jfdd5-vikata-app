@@ -17,13 +17,13 @@ const mapStateToProps = state => ({
 
 const PartsListView = (props) => (
   <Well>
-        <h1>Lista części typu: {
+{/*        <h1>Lista części typu: {
         props.partsTypes.find(
           type =>
           type.id === props.selectedType
         ).type.toLowerCase()
       }
-    </h1>
+    </h1>*/}
 
       <ListGroup>
         {

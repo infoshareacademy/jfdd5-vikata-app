@@ -1,4 +1,4 @@
-import {parts, users, types} from "../data";
+import {parts, users, types,vehicleType} from "../data";
 
 
 const initialState = {
@@ -7,6 +7,7 @@ const initialState = {
   partsTypes: types,
   selectedVehicleType: null,
   selectedType: 1,
+  vehicleTypes:vehicleType,
   loggedUser: 1
 }
 
