@@ -4,33 +4,40 @@
 import React from 'react'
 import {Modal, Button, Glyphicon, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 
-export default React.createClass({
+class AddToSellModal extends React.Component{
+  constructor() {
+    super()
 
-  getInitialState() {
-    return { showModal: false };
-  },
+    this.state = ({
+      showModal: false,
+      nazwa: ''
+    })
+  }
 
-  close() {
-    this.setState({ showModal: false });
-  },
 
-  open() {
-    this.setState({ showModal: true });
-  },
 
   render() {
+
+    let close = () => {
+      this.setState({ showModal: false });
+    }
+
+    let open = () => {
+      this.setState({ showModal: true });
+    }
+
     return (
       <div>
 
         <Button
           bsStyle="success"
-          onClick={this.open}
+          onClick={open}
           block
         ><Glyphicon glyph="plus"/>{' '}
           Dodaj przedmiot
         </Button>
 
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={close}>
           <Modal.Header closeButton>
             <Modal.Title>Wystaw przedmiot na sprzedaż</Modal.Title>
           </Modal.Header>
@@ -39,7 +46,15 @@ export default React.createClass({
             <form>
               <FormGroup>
                 <ControlLabel>Nazwa</ControlLabel>
-                <FormControl type="text" placeholder="Nazwa przedmiotu"/>
+                <FormControl type="text"
+                             placeholder="Nazwa przedmiotu"
+                             onChange={
+                               event =>
+                                 this.setState({
+                                   nazwa: event.target.value
+                                 })
+                             }
+                />
               </FormGroup>
 
               <FormGroup controlId="formDescSell">
@@ -65,10 +80,12 @@ export default React.createClass({
           </Modal.Body>
 
           <Modal.Footer>
-            <Button onClick={this.close}>Zamknij</Button>
+            <Button onClick={close}>Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>
     );
   }
-});
+}
+
+export default AddToSellModal
