@@ -10,7 +10,9 @@ import { Provider } from 'react-redux'
 import store from './store'
 import { fetchTypes } from './TypesView/actionCreators'
 
-const fetchTypesOnEnter = () => store.dispatch(fetchTypes())
+const fetchTypesOnEnter = () =>
+  store.dispatch(fetchTypes()
+  )
 
 ReactDOM.render(
   <Provider store={store}>
