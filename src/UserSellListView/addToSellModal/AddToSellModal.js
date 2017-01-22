@@ -19,8 +19,6 @@ class AddToSellModal extends React.Component{
     })
   }
 
-
-
   render() {
 
     let close = () => {
@@ -115,6 +113,6 @@ class AddToSellModal extends React.Component{
       </div>
     );
   }
-});
+}
 
 export default connect(mapStateToProps) (AddToSellModal)

@@ -7,7 +7,8 @@ import {
 } from './actionTypes'
 
 const initialState = {
-  partsTypes: []
+  partsTypes: [],
+  selectedType: null
 }
 
 export default (state = initialState, action)=>{
@@ -20,6 +21,11 @@ export default (state = initialState, action)=>{
       return {
         ...state,
         partsTypes: action.types
+      }
+    case 'SELECT_PARTS':
+      return  {
+        ...state,
+        selectedType: action.typeId
       }
     default:
       return state

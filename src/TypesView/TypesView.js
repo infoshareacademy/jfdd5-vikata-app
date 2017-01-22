@@ -10,7 +10,7 @@ import {Col, Clearfix, Well} from 'react-bootstrap'
 import './TypesView.css'
 
 const mapStateToProps = state => ({
-  selectedType: state.appData.selectedType,
+  selectedType: state.typesData.selectedType,
   partsTypes: state.typesData.partsTypes
 })
 
