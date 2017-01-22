@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect} from 'react-redux'
-import {PageHeader, Grid, Row, Col} from 'react-bootstrap'
+import { Grid, Row, Col} from 'react-bootstrap'
 import './App.css';
 import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
 import PartFilterView from '../partFilterView/PartFilterView'
 import { LoginPanelView } from '../LoginPanelView'
+import PageHeader from '../pageHeader/PageHeader'
 import { LogForm } from '../LoginPanelView'
 
 const mapStateToProps = (state) => ({
@@ -18,10 +19,8 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.props.isLogged === false ?
-          <div><PageHeader bsClass="pageHeader">
-            <div><h2>Autonaprawiacz</h2></div>
-          </PageHeader>
-            <LoginPanelView/></div> : <LogForm/>
+          <PageHeader/>
+          : <LogForm/>
         }
         <Grid fluid>
           <Row className="show-grid">
