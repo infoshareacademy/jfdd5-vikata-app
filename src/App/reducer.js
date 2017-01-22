@@ -6,7 +6,6 @@ const initialState = {
   users: users,
   partsTypes: types,
   selectedVehicleType: null,
-  selectedType: null,
   vehicleTypes:vehicleType,
   loggedUser: 1
 }
@@ -18,12 +17,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selectedVehicleType: action.vehicleType
-      }
-
-    case 'SELECT_PARTS':
-      return  {
-        ...state,
-        selectedType: action.typeId
       }
 
     case 'RESET':

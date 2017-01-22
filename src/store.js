@@ -1,15 +1,30 @@
 /**
  * Created by mlacki on 16.12.16.
  */
-import { createStore, combineReducers } from 'redux'
+import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import persistState from 'redux-localstorage'
 import { reducer as appReducer } from './App'
 import { reducer as loginReducer } from './LoginPanelView'
+import { reducer as typesReducer } from './TypesView'
+import { reducer as partsReducer } from './PartsListView'
 
 const reducer = combineReducers({
+  typesData: typesReducer,
+  partsData: partsReducer,
   appData: appReducer,
   logData: loginReducer
 })
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const enhancer = composeEnhancers(
+  applyMiddleware(
+    thunkMiddleware // lets us dispatch() functions (thunks) in addition to objects with 'type' attribute
+  ),
+  persistState(['logData'])
+)
+
+const store = createStore(reducer, enhancer);
 
 export default store

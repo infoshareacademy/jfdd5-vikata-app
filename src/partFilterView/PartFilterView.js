@@ -10,9 +10,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  partsTypes: state.appData.partsTypes,
+  partsTypes: state.typesData.partsTypes,
   vehicleTypes: state.appData.vehicleTypes,
-  selectedType: state.appData.selectedType,
+  selectedType: state.typesData.selectedType,
   selectedVehicleType: state.appData.selectedVehicleType
 })
 
