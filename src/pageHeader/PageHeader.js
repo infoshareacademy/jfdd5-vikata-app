@@ -3,7 +3,8 @@
  */
 import React from 'react'
 import  LoginButton  from '../LoginPanelView/LoginButton'
-import {Nav,Navbar, NavItem, Carousel, Jumbotron} from 'react-bootstrap'
+import  './PageHeader.css'
+import {Nav,Navbar, NavItem, Carousel, Jumbotron, ButtonGroup, Button} from 'react-bootstrap'
 
 const PageHeader = (props) => (
   <div>
@@ -16,13 +17,13 @@ const PageHeader = (props) => (
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav pullRight>
-          <NavItem eventKey={1} href="#" disabled>Załóż konto</NavItem>
-          <NavItem eventKey={2} href="#" ><LoginButton/></NavItem>
+
+          <LoginButton/>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
 
-    <Carousel>
+    <Carousel id="karuzela">
       <Carousel.Item>
         <div style={{overflowY: 'hidden', height: 400}}>
           <img width={'100%'} alt="photo1" src={process.env.PUBLIC_URL + 'img/img-header/karuzela1.jpg'}/>

@@ -4,8 +4,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { loggedIn, logOut, failedLoginAttempt } from './actionCreators'
-import { FormControl, FormGroup} from 'react-bootstrap'
-import { Col, Row, Button, Well } from 'react-bootstrap'
+import {FormControl, FormGroup, Nav, Navbar, Button, Glyphicon, ButtonGroup} from 'react-bootstrap'
+import {Col, Row, Well} from 'react-bootstrap'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged,
@@ -63,12 +63,27 @@ class LogForm extends React.Component {
 
   render() {
     return (
-      <Well>
+      <div>
         {this.props.isLogged ?
-            <Row>
-            <Col md={3}><h4>Zalogowany jako {this.props.userLogin}</h4></Col>
-              <Col md={9}><Button bsStyle="primary" onClick={() => this.props.logOut()}>Wyloguj</Button></Col>
-            </Row>
+
+          <Navbar inverse fluid style={{borderRadius: 0, marginBottom: 0}}>
+            <Navbar.Header>
+              <Navbar.Brand >
+                <a href="#">Find My Part</a>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav pullRight>
+                <ButtonGroup style={{marginTop:6}}>
+                  <Button bsStyle="primary" disabled><Glyphicon glyph="user"></Glyphicon> {this.props.userLogin}
+                  </Button>
+                  <Button bsStyle="primary" onClick={() => this.props.logOut()}>Wyloguj</Button>
+                </ButtonGroup>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+
            :
           <div className="loginform">
             <form onSubmit={this.handleSubmit}>
@@ -99,12 +114,11 @@ class LogForm extends React.Component {
               />
               <br/>
               <br/>
-              <button type="submit">Zaloguj</button>
+                <Button bsStyle="success" type="submit">Zaloguj</Button>
               {
                 this.props.failedLoginAttempt ?
                   <h4>
-                    Coś się nie powiodło.<br/>
-                    Weź się w garść!
+                    Logowanie nie powiodło się.
                   </h4> :
                   ''
               }
@@ -112,7 +126,7 @@ class LogForm extends React.Component {
             </form>
           </div>
         }
-      </Well>
+      </div>
     )
   }
 }

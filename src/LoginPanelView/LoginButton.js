@@ -2,7 +2,7 @@
  * Created by rafalmiler on 12.01.17.
  */
 import React from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Modal,ButtonGroup } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import LogForm from './LogForm'
 
@@ -24,12 +24,14 @@ class LoginButton extends React.Component {
 
     return (
       <div className="modal-container">
-        <button
+        <ButtonGroup style={{marginTop:6}}>
+          <Button bsStyle="primary" disabled>Załóż konto</Button>
+          <Button bsStyle="primary"
           onClick={() => this.setState({ show: true})}
         >
           Zaloguj się
-        </button>
-
+          </Button>
+        </ButtonGroup>
         <Modal
           show={this.state.show}
           onHide={close}
