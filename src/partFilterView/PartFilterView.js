@@ -45,19 +45,19 @@ class PartFilterView extends React.Component {
       <ControlLabel>Filtruj typ pojazdu</ControlLabel><div></div>
 
       <ButtonGroup>
-        <DropdownButton title="lądowe">
+        <DropdownButton title="lądowe" id="ladowe-dropdown">
           <MenuItem onClick={() => this.props.setType(1)}>samochody</MenuItem>
           <MenuItem onClick={() => this.props.setType(2)}>motocykle</MenuItem>
           <MenuItem onClick={() => this.props.setType(3)}>inne (lądowe)</MenuItem>
         </DropdownButton>
 
-        <DropdownButton title="latające">
+        <DropdownButton title="latające" id="latajace-dropdown">
           <MenuItem onClick={() => this.props.setType(4)}>samoloty</MenuItem>
           <MenuItem onClick={() => this.props.setType(5)}>helikoptery</MenuItem>
           <MenuItem onClick={() => this.props.setType(6)}>inne (latające)</MenuItem>
         </DropdownButton>
 
-        <DropdownButton title="pływające">
+        <DropdownButton title="pływające" id="plywajace-dropdown">
           <MenuItem onClick={() => this.props.setType(7)}>statki</MenuItem>
           <MenuItem onClick={() => this.props.setType(8)}>łodzie podwodne</MenuItem>
           <MenuItem onClick={() => this.props.setType(9)}>inne (pływające)</MenuItem>
