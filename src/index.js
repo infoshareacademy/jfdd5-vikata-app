@@ -11,11 +11,11 @@ import store from './store'
 import { fetchTypes } from './TypesView/state/actionCreators'
 import { fetchParts } from './PartsListView/state/actionCreators'
 
-const fetchTypesOnEnter = () =>
+const fetchTypesOnEnter = () => {
+  store.dispatch(fetchParts())
   store.dispatch(fetchTypes())
 
-const fetchPartsOnEnter = () =>
-  store.dispatch(fetchParts())
+}
 
 ReactDOM.render(
   <Provider store={store}>

@@ -22,6 +22,6 @@ export default (state = initialState, action)=>{
         partTypes: action.types
       }
     default:
-      return initialState
+      return state
   }
 }

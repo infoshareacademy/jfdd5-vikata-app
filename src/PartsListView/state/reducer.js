@@ -22,6 +22,6 @@ export default (state = initialState, action)=>{
         parts: action.parts
       }
     default:
-      return initialState
+      return state
   }
 }
