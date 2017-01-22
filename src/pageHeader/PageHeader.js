@@ -2,14 +2,30 @@
  * Created by alanw on 22.01.2017.
  */
 import React from 'react'
-import {Grid, Row, Image, Carousel} from 'react-bootstrap'
+import './PageHeader.css'
+import {Nav,Navbar, NavItem, Carousel} from 'react-bootstrap'
 
 const PageHeader = (props) => (
-  <Grid fluid>
+  <div>
+    <Navbar inverse fluid style={{borderRadius:0,marginBottom:0}}>
+      <Navbar.Header>
+        <Navbar.Brand >
+          <a href="#">Find My Part</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="#" disabled>Załóż konto</NavItem>
+          <NavItem eventKey={2} href="#">Zaloguj</NavItem>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+
     <Carousel>
       <Carousel.Item>
         <div style={{overflowY: 'hidden', height: 400}}>
-          <img width={'100%'} alt="900x500" src={process.env.PUBLIC_URL + 'img/img-header/karuzela1.jpg'}/>
+          <img width={'100%'} alt="photo1" src={process.env.PUBLIC_URL + 'img/img-header/karuzela1.jpg'}/>
         </div>
         <Carousel.Caption>
           <h1>Baza unikalnych części</h1>
@@ -18,7 +34,7 @@ const PageHeader = (props) => (
       </Carousel.Item>
       <Carousel.Item>
         <div style={{overflowY: 'hidden', height: 400}}>
-          <img width={'100%'} alt="900x500" src={process.env.PUBLIC_URL + 'img/img-header/karuzela2.jpg'}/>
+          <img width={'100%'} alt="photo2" src={process.env.PUBLIC_URL + 'img/img-header/karuzela2.jpg'}/>
         </div>
         <Carousel.Caption>
           <h1>Sprzedaj swoje graty</h1>
@@ -27,7 +43,7 @@ const PageHeader = (props) => (
       </Carousel.Item>
       <Carousel.Item>
         <div style={{overflowY: 'hidden', height: 400}}>
-          <img width={'100%'} alt="900x500" src={process.env.PUBLIC_URL + 'img/img-header/karuzela3.jpg'}/>
+          <img width={'100%'} alt="photo3" src={process.env.PUBLIC_URL + 'img/img-header/karuzela3.jpg'}/>
         </div>
         <Carousel.Caption>
           <h1>Szukaj skarbów</h1>
@@ -35,7 +51,7 @@ const PageHeader = (props) => (
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  </Grid>
+  </div>
 )
 
 export default PageHeader
