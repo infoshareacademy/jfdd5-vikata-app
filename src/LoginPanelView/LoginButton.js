@@ -4,14 +4,13 @@
 import React from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import LogForm from '../LogForm'
-import './LoginButton.css'
+import LogForm from './LogForm'
 
 const mapStateToProps = state => ({
   isLogged: state.logData.isLogged
 })
 
-class LoginPanelView extends React.Component {
+class LoginButton extends React.Component {
   constructor() {
     super()
 
@@ -25,13 +24,11 @@ class LoginPanelView extends React.Component {
 
     return (
       <div className="modal-container">
-        <Button
-          bsStyle="primary"
-          bsSize="large"
+        <button
           onClick={() => this.setState({ show: true})}
         >
           Zaloguj się
-        </Button>
+        </button>
 
         <Modal
           show={this.state.show}
@@ -54,4 +51,4 @@ class LoginPanelView extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(LoginPanelView)
+export default connect(mapStateToProps)(LoginButton)
