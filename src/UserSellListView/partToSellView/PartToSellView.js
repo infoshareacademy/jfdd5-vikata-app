@@ -10,7 +10,7 @@ class PartToSellView extends React.Component{
     return(
       <div style={{maxHeight:700 ,overflowY:'auto'}}>
         <h3>Zdjęcie:</h3>
-        <Image src={process.env.PUBLIC_URL + '/img/img-parts/part01.jpg'} rounded responsive/>
+        <Image src={process.env.PUBLIC_URL + '/img/img-parts/'+this.props.part.image} rounded responsive/>
         <Button bsStyle="info" block>Zmień</Button>
         <hr/>
 

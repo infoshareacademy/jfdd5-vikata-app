@@ -2,7 +2,12 @@
  * Created by alanw on 12.01.2017.
  */
 import React from 'react'
+import {connect} from 'react-redux'
 import {Modal, Button, Glyphicon, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
+const mapStateToProps = state => ({
+  partsTypes: state.appData.partsTypes,
+  vehicleTypes: state.appData.vehicleTypes
+})
 
 class AddToSellModal extends React.Component{
   constructor() {
@@ -63,6 +68,30 @@ class AddToSellModal extends React.Component{
               </FormGroup>
 
               <FormGroup>
+                <ControlLabel>Typ części</ControlLabel>
+                <FormControl componentClass="select">
+                  {
+                    this.props.partsTypes.map(
+                      part=>
+                        <option value={part.type.toLowerCase()}>{part.type.toLowerCase()}</option>
+                    )
+                  }
+                </FormControl>
+              </FormGroup>
+
+              <FormGroup>
+                <ControlLabel>Typ pojazdu</ControlLabel>
+                <FormControl componentClass="select">
+                  {
+                    this.props.vehicleTypes.map(
+                      type=>
+                        <option value={type.name}>{type.name}</option>
+                    )
+                  }
+                </FormControl>
+              </FormGroup>
+
+              <FormGroup>
                 <ControlLabel>Cena</ControlLabel>
                 <FormControl type="number" />
               </FormGroup>
@@ -86,6 +115,6 @@ class AddToSellModal extends React.Component{
       </div>
     );
   }
-}
+});
 
-export default AddToSellModal
+export default connect(mapStateToProps) (AddToSellModal)

@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import {connect} from 'react-redux'
-import {Well, ListGroup, ListGroupItem, Image, Grid, Row, Col, Accordion, Panel} from 'react-bootstrap'
+import {Well, Accordion, Panel} from 'react-bootstrap'
 import {AutoAffix} from 'react-overlays'
-import PartToSellView from './PartToSellView/PartToSellView'
+import PartToSellView from './partToSellView/PartToSellView'
 import AddToSellModal from './addToSellModal/AddToSellModal'
 
 const mapStateToProps = state => ({
