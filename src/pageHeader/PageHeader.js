@@ -17,7 +17,7 @@ const PageHeader = (props) => (
       <Navbar.Collapse>
         <Nav pullRight>
           <NavItem eventKey={1} href="#" disabled>Załóż konto</NavItem>
-          <NavItem eventKey={2} href="#" ><LoginButton/></NavItem>
+          <LoginButton/>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

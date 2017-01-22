@@ -15,7 +15,13 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addItemToSell: (addItemToSell) => dispatch({type: ADD_ITEM_TO_SELL, addItemToSell: addItemToSell})
+  addItemToSell: (itemToSellName, itemToSellDescription) => dispatch(
+    {
+      type: ADD_ITEM_TO_SELL,
+      itemToSellName: itemToSellName,
+      itemToSellDescription: itemToSellDescription
+    }
+  )
 })
 
 class AddToSellModal extends React.Component{
@@ -24,7 +30,8 @@ class AddToSellModal extends React.Component{
 
     this.state = {
       showModal: false,
-      itemToSellName: ''
+      itemToSellName: '',
+      itemToSellDescription: ''
     }
   }
 
@@ -78,7 +85,16 @@ class AddToSellModal extends React.Component{
 
               <FormGroup controlId="formDescSell">
                 <ControlLabel>Opis</ControlLabel>
-                <FormControl componentClass="textarea" placeholder="Opis przedmiotu" />
+                <FormControl componentClass="textarea"
+                             placeholder="Opis przedmiotu"
+                             value={this.state.itemToSellDescription}
+                             onChange={
+                               event =>
+                                 this.setState({
+                                   itemToSellDescription: event.target.value
+                                 })
+                             }
+                />
               </FormGroup>
 
               <FormGroup>
