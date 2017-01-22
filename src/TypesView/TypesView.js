@@ -5,7 +5,7 @@ import React from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 import {connect} from 'react-redux'
-import {Grid, Row, Col, Clearfix, Well} from 'react-bootstrap'
+import {Col, Clearfix, Well} from 'react-bootstrap'
 
 import './TypesView.css'
 
@@ -24,12 +24,12 @@ const TypesView = (props) => (
           {
             props.partsTypes.map(
               typ =>
-                <Col md={4}
+                <Col md={4} key={typ.id}
                      onClick={() => (
                        props.selectedType === null ?  props.showType(typ.id) : props.showType(null)
                      )}
                      className="TypesView-tile">
-                  <ListGroupItem key={typ.id}
+                  <ListGroupItem
                                  className={
                                    typ.id === props.selectedType ?
                                      'TypesView-selected-type' : ''
