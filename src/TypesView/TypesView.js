@@ -10,8 +10,8 @@ import {Col, Clearfix, Well} from 'react-bootstrap'
 import './TypesView.css'
 
 const mapStateToProps = state => ({
-  partsTypes: state.appData.partsTypes,
-  selectedType: state.appData.selectedType,
+  selectedType: state.typesData.selectedType,
+  partsTypes: state.typesData.partsTypes
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -29,7 +29,7 @@ const TypesView = (props) => (
                        props.selectedType === null ?  props.showType(typ.id) : props.showType(null)
                      )}
                      className="TypesView-tile">
-                  <ListGroupItem
+                  <ListGroupItem key={typ.id}
                                  className={
                                    typ.id === props.selectedType ?
                                      'TypesView-selected-type' : ''

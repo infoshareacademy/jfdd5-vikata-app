@@ -4,42 +4,43 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Modal, Button, Glyphicon, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
-
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
   vehicleTypes: state.appData.vehicleTypes
 })
 
 class AddToSellModal extends React.Component{
-
-  constructor(){
+  constructor() {
     super()
 
-    this.state={
-      showModal:false
-    }
-    this.close =()=> {
-      this.setState({ showModal: false });
-    }
-
-    this.open = () => {
-      this.setState({ showModal: true });
-    }
+    this.state = ({
+      showModal: false,
+      nazwa: ''
+    })
   }
 
   render() {
+
+    let close = () => {
+      this.setState({ showModal: false });
+    }
+
+    let open = () => {
+      this.setState({ showModal: true });
+    }
+
     return (
       <div>
 
         <Button
           bsStyle="success"
-          onClick={this.open}
+          onClick={open}
           block
         ><Glyphicon glyph="plus"/>{' '}
           Dodaj przedmiot
         </Button>
 
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={close}>
           <Modal.Header closeButton>
             <Modal.Title>Wystaw przedmiot na sprzedaż</Modal.Title>
           </Modal.Header>
@@ -48,7 +49,15 @@ class AddToSellModal extends React.Component{
             <form>
               <FormGroup>
                 <ControlLabel>Nazwa</ControlLabel>
-                <FormControl type="text" placeholder="Nazwa przedmiotu"/>
+                <FormControl type="text"
+                             placeholder="Nazwa przedmiotu"
+                             onChange={
+                               event =>
+                                 this.setState({
+                                   nazwa: event.target.value
+                                 })
+                             }
+                />
               </FormGroup>
 
               <FormGroup controlId="formDescSell">
@@ -89,7 +98,7 @@ class AddToSellModal extends React.Component{
                 <ControlLabel>Zdjęcie</ControlLabel>
                 <FormControl type="file" />
                 <HelpBlock>Dodaj zdjęcie przedstawiające twój przedmiot.</HelpBlock>
-              </FormGroup>
+                </FormGroup>
 
               <Button type="submit" bsStyle="success">
                 Zapisz
@@ -98,7 +107,7 @@ class AddToSellModal extends React.Component{
           </Modal.Body>
 
           <Modal.Footer>
-            <Button onClick={this.close}>Zamknij</Button>
+            <Button onClick={close}>Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>
