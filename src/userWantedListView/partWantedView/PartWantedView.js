@@ -11,7 +11,6 @@ class PartWantedView extends React.Component{
       <div style={{maxHeight:700 ,overflowY:'auto'}}>
 
         <h3>Opis:</h3>
-        {console.log(this.props.part.price)}
         {this.props.part.description}
         <Button bsStyle="info" block>Edytuj</Button>
         <hr/>
