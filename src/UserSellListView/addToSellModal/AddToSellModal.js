@@ -4,19 +4,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Modal, Button, Glyphicon, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
+import {
+  ADD_ITEM_TO_SELL
+} from './actionTypes'
+
 const mapStateToProps = state => ({
   partsTypes: state.appData.partsTypes,
-  vehicleTypes: state.appData.vehicleTypes
+  vehicleTypes: state.appData.vehicleTypes,
+  partsToSell: state.partsToSellData.partsToSell
+})
+
+const mapDispatchToProps = dispatch => ({
+  addItemToSell: (addItemToSell) => dispatch({type: ADD_ITEM_TO_SELL, addItemToSell: addItemToSell})
 })
 
 class AddToSellModal extends React.Component{
   constructor() {
     super()
 
-    this.state = ({
+    this.state = {
       showModal: false,
-      nazwa: ''
-    })
+      itemToSellName: ''
+    }
   }
 
   render() {
@@ -27,6 +36,12 @@ class AddToSellModal extends React.Component{
 
     let open = () => {
       this.setState({ showModal: true });
+    }
+
+
+    this.handleSubmit = (event) => {
+      event.preventDefault()
+      this.props.addItemToSell(this.state.itemToSellName)
     }
 
     return (
@@ -46,15 +61,16 @@ class AddToSellModal extends React.Component{
           </Modal.Header>
 
           <Modal.Body>
-            <form>
-              <FormGroup>
+            <form onSubmit={this.handleSubmit}>
+              <FormGroup controlId="formBasicText">
                 <ControlLabel>Nazwa</ControlLabel>
                 <FormControl type="text"
                              placeholder="Nazwa przedmiotu"
+                             value={this.state.itemToSellName}
                              onChange={
                                event =>
                                  this.setState({
-                                   nazwa: event.target.value
+                                   itemToSellName: event.target.value
                                  })
                              }
                 />
@@ -71,7 +87,7 @@ class AddToSellModal extends React.Component{
                   {
                     this.props.partsTypes.map(
                       part=>
-                        <option value={part.type.toLowerCase()}>{part.type.toLowerCase()}</option>
+                        <option key={part.id} value={part.type.toLowerCase()}>{part.type.toLowerCase()}</option>
                     )
                   }
                 </FormControl>
@@ -83,7 +99,7 @@ class AddToSellModal extends React.Component{
                   {
                     this.props.vehicleTypes.map(
                       type=>
-                        <option value={type.name}>{type.name}</option>
+                        <option key={type.name} value={type.name}>{type.name}</option>
                     )
                   }
                 </FormControl>
@@ -115,4 +131,4 @@ class AddToSellModal extends React.Component{
   }
 }
 
-export default connect(mapStateToProps) (AddToSellModal)
+export default connect(mapStateToProps,mapDispatchToProps) (AddToSellModal)

@@ -6,7 +6,6 @@ import { TypesView } from '../TypesView'
 import { UserWantedListView} from '../userWantedListView'
 import { UserSellListView} from '../UserSellListView'
 import PartFilterView from '../partFilterView/PartFilterView'
-import { LoginPanelView } from '../LoginPanelView'
 import PageHeader from '../pageHeader/PageHeader'
 import { LogForm } from '../LoginPanelView'
 

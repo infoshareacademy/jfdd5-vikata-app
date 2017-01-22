@@ -2,7 +2,7 @@
  * Created by alanw on 22.01.2017.
  */
 import React from 'react'
-import './PageHeader.css'
+import  LoginButton  from '../LoginPanelView/LoginButton'
 import {Nav,Navbar, NavItem, Carousel, Jumbotron} from 'react-bootstrap'
 
 const PageHeader = (props) => (
@@ -17,7 +17,7 @@ const PageHeader = (props) => (
       <Navbar.Collapse>
         <Nav pullRight>
           <NavItem eventKey={1} href="#" disabled>Załóż konto</NavItem>
-          <NavItem eventKey={2} href="#">Zaloguj</NavItem>
+          <NavItem eventKey={2} href="#" ><LoginButton/></NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -8,12 +8,14 @@ import { reducer as appReducer } from './App'
 import { reducer as loginReducer } from './LoginPanelView'
 import { reducer as typesReducer } from './TypesView'
 import { reducer as partsReducer } from './PartsListView'
+import { reducer as partsToSellReducer } from './UserSellListView/addToSellModal'
 
 const reducer = combineReducers({
   typesData: typesReducer,
   partsData: partsReducer,
   appData: appReducer,
-  logData: loginReducer
+  logData: loginReducer,
+  partsToSellData: partsToSellReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
