@@ -89,7 +89,7 @@ class AddToSellModal extends React.Component{
                 <ControlLabel>Zdjęcie</ControlLabel>
                 <FormControl type="file" />
                 <HelpBlock>Dodaj zdjęcie przedstawiające twój przedmiot.</HelpBlock>
-                </FormGroup>
+              </FormGroup>
 
               <Button type="submit" bsStyle="success">
                 Zapisz
