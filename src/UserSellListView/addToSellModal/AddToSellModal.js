@@ -2,21 +2,30 @@
  * Created by alanw on 12.01.2017.
  */
 import React from 'react'
+import {connect} from 'react-redux'
 import {Modal, Button, Glyphicon, FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 
-export default React.createClass({
+const mapStateToProps = state => ({
+  partsTypes: state.appData.partsTypes,
+  vehicleTypes: state.appData.vehicleTypes
+})
 
-  getInitialState() {
-    return { showModal: false };
-  },
+class AddToSellModal extends React.Component{
 
-  close() {
-    this.setState({ showModal: false });
-  },
+  constructor(){
+    super()
 
-  open() {
-    this.setState({ showModal: true });
-  },
+    this.state={
+      showModal:false
+    }
+    this.close =()=> {
+      this.setState({ showModal: false });
+    }
+
+    this.open = () => {
+      this.setState({ showModal: true });
+    }
+  }
 
   render() {
     return (
@@ -48,6 +57,30 @@ export default React.createClass({
               </FormGroup>
 
               <FormGroup>
+                <ControlLabel>Typ części</ControlLabel>
+                <FormControl componentClass="select">
+                  {
+                    this.props.partsTypes.map(
+                      part=>
+                        <option value={part.type.toLowerCase()}>{part.type.toLowerCase()}</option>
+                    )
+                  }
+                </FormControl>
+              </FormGroup>
+
+              <FormGroup>
+                <ControlLabel>Typ pojazdu</ControlLabel>
+                <FormControl componentClass="select">
+                  {
+                    this.props.vehicleTypes.map(
+                      type=>
+                        <option value={type.name}>{type.name}</option>
+                    )
+                  }
+                </FormControl>
+              </FormGroup>
+
+              <FormGroup>
                 <ControlLabel>Cena</ControlLabel>
                 <FormControl type="number" />
               </FormGroup>
@@ -71,4 +104,6 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
+
+export default connect(mapStateToProps) (AddToSellModal)
