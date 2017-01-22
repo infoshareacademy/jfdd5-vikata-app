@@ -8,10 +8,10 @@ import './PartsListView.css'
 import ContactModal from './contactModal/ContactModal'
 
 const mapStateToProps = state => ({
-  partsTypes: state.appData.partsTypes,
+  partsTypes: state.typesData.partsTypes,
   parts: state.appData.parts,
   users: state.appData.users,
-  selectedType: state.appData.selectedType,
+  selectedType: state.typesData.selectedType,
   selectedVehicleType: state.appData.selectedVehicleType
 })
 
